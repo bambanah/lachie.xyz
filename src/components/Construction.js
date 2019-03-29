@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import "./style.css";
+import "./style.scss";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Construction extends Component {
   render() {
@@ -14,6 +16,13 @@ export default class Construction extends Component {
             🚧
           </span>
         </h1>
+        <ul className="links">
+          <li>
+            <a href="https://github.com/Bambanah">
+              <FontAwesomeIcon icon={["fab", "github"]} size="2x" />
+            </a>
+          </li>
+        </ul>
       </div>
     );
   }
