@@ -1,40 +1,37 @@
-.to-do-list-container {
-  margin-top: 25px;
-}
-.to-do-list-item {
-  margin-top: 10px;
-  color: white;
-  transition: background-color 1s;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500|Raleway:300,400,500,600,700");
+
+html,
+body,
+#root,
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.to-do-list-item h4 {
-  padding-left: 25px;
-  padding-bottom: 5px;
+.construction {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(255, 251, 241);
 }
 
-.to-do-list-item:hover {
-  background-color: dodgerblue !important;
+h1 {
+  font-family: "Raleway", sans-serif;
+  color: rgb(87, 66, 53);
+  font-weight: 700;
 }
 
-.complete-todo-item {
-  float: right;
-  right: 20px;
-}
-
-#todo-add-form {
-  animation: 1s;
-  animation-name: slidein;
-}
-
-input#todoNext:active {
-  border-bottom: 1px solid dodgerblue !important;
-}
-
-@keyframes slidein {
-  from {
-    opacity: 0;
-  }
-  to {
-    margin-left: 1;
-  }
+.emoji {
+  display: inline-block;
+  overflow: hidden;
+  font-size: 2.5rem;
+  margin-top: -10px;
+  vertical-align: middle;
 }

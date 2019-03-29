@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import Home from "./components/Home";
-import Nav from "./components/Nav";
+import Construction from "./components/Construction";
 
 class App extends Component {
   render() {
     return (
       <div className="container">
-        <Nav />
-        <Home />
+        <Construction />
       </div>
     );
   }
