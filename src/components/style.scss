@@ -38,6 +38,10 @@ h1 {
   vertical-align: middle;
 }
 
+.text {
+  margin: 0 3rem;
+}
+
 .links {
   padding: 0;
   margin: 0;
@@ -49,6 +53,9 @@ h1 {
 }
 
 @media (max-width: 576px) {
+  .text {
+    margin: 0;
+  }
   .emoji {
     visibility: hidden;
     width: 0;
