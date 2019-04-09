@@ -11,7 +11,7 @@ export default class Construction extends Component {
           <span className="emoji" role="img" aria-label="construction-sign">
             🚧
           </span>
-          <span className="text">Coming Soon</span>
+          <span className="text">Coming Soon!</span>
           <span className="emoji" role="img" aria-label="construction-sign">
             🚧
           </span>
