@@ -15,6 +15,6 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById("roots")
+  document.getElementById("root")
 );
-serviceWorker.register();
+serviceWorker.unregister();
