@@ -7,10 +7,10 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 
 library.add(fab);
 
-class App extends Component {
+class Hub extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="hub-container">
         <div>This is the main hub of the site.</div>
         <div>
           <ul>
@@ -26,4 +26,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default Hub;

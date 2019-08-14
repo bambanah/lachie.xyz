@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import App from "./App";
+import Hub from "./Hub";
 import Construction from "./Construction";
 import Startpage from "./Startpage";
 
@@ -12,7 +12,7 @@ const Root = ({ store }) => (
     <Router>
       <Route exact path="/" component={Construction} />
       {/* <Route path="/construction" component={Construction} /> */}
-      <Route path="/hub" component={App} />
+      <Route path="/hub" component={Hub} />
       <Route path="/startpage" component={Startpage} />
     </Router>
   </Provider>
