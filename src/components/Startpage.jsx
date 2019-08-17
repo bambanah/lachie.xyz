@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./styles/startpage.scss";
+import "./styles.scss";
 
 export default class Startpage extends Component {
   render() {

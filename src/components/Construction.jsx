@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "./styles/construction.scss";
+import "./styles.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Construction extends Component {
   render() {
     return (
-      <div className="construction">
+      <div className="construction-container">
         <h1>
           <span className="emoji" role="img" aria-label="construction-sign">
             🚧
