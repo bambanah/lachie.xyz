@@ -1,20 +1,26 @@
 import React, { Component } from "react";
-//import PropTypes from "prop-types";
+
+function Links(props) {
+  const link_content = props.content;
+
+  const listItems = link_content.map(link => (
+    <li key={link.url}>
+      <a href={link.url} style={{ color: link.color }}>
+        {link.name}
+      </a>
+    </li>
+  ));
+
+  return <ul>{listItems}</ul>;
+}
 
 export default class LinkWrapper extends Component {
   render() {
     return (
       <div className="link-wrapper">
-        <div className="wrapper-title">social</div>
+        <div className="wrapper-title">{this.props.title}</div>
         <div className="wrapper-body col">
-          <ul>
-            <li>
-              <a href="https://google.com">google</a>
-            </li>
-            <li>
-              <a href="https://youtube.com">youtube</a>
-            </li>
-          </ul>
+          <Links content={this.props.content} />
         </div>
       </div>
     );

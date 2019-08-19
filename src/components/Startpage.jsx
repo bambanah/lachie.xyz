@@ -13,7 +13,18 @@ export default class Startpage extends Component {
               <h1>Hello</h1>
             </div>
             <div className="links-container">
-              <LinkWrapper title="social" body="string_here" />
+              <LinkWrapper
+                title="social"
+                content={[
+                  {
+                    name: "google",
+                    url: "https://www.google.com/",
+                    color: "#FF0000"
+                  },
+                  { name: "youtube", url: "https://www.youtube.com/" },
+                  { name: "facebook", url: "https://www.facebook.com/" }
+                ]}
+              />
             </div>
           </div>
         </div>
