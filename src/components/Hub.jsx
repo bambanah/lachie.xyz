@@ -5,7 +5,17 @@ import { Link } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 
+import DisplayAuthAction from "./auth/DisplayAuthAction";
+
 library.add(fab);
+
+function AuthComponent(props) {
+  return (
+    <div>
+      <DisplayAuthAction />
+    </div>
+  );
+}
 
 class Hub extends Component {
   render() {
@@ -19,6 +29,9 @@ class Hub extends Component {
             </li>
             <li>
               <Link to="/startpage">Start Page</Link>
+            </li>
+            <li>
+              <AuthComponent />
             </li>
           </ul>
         </div>
