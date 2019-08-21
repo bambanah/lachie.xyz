@@ -7,15 +7,9 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 
 import DisplayAuthAction from "./auth/DisplayAuthAction";
 
-library.add(fab);
+import Todos from "./Todos";
 
-function AuthComponent(props) {
-  return (
-    <div>
-      <DisplayAuthAction />
-    </div>
-  );
-}
+library.add(fab);
 
 class Hub extends Component {
   render() {
@@ -31,7 +25,10 @@ class Hub extends Component {
               <Link to="/startpage">Start Page</Link>
             </li>
             <li>
-              <AuthComponent />
+              <DisplayAuthAction />
+            </li>
+            <li>
+              <Todos />
             </li>
           </ul>
         </div>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { IfFirebaseAuthed, IfFirebaseUnAuthed } from "@react-firebase/auth";
-import LogoutButton from "./LogoutButton";
-import LoginButton from "./LoginButton";
+import firebase from "firebase/app";
 
 export default class DisplayAuthAction extends Component {
   render() {
@@ -16,4 +15,44 @@ export default class DisplayAuthAction extends Component {
       </div>
     );
   }
+}
+
+function LoginButton() {
+  return (
+    <div>
+      <button
+        onClick={() => {
+          firebase
+            .app()
+            .auth()
+            .signInAnonymously();
+        }}
+      >
+        Sign in anonymously
+      </button>
+      <button
+        onClick={() => {
+          const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+          firebase.auth().signInWithPopup(googleAuthProvider);
+        }}
+      >
+        Sign in with Google
+      </button>
+    </div>
+  );
+}
+
+function LogoutButton() {
+  return (
+    <button
+      onClick={() => {
+        firebase
+          .app()
+          .auth()
+          .signOut();
+      }}
+    >
+      Sign out
+    </button>
+  );
 }
