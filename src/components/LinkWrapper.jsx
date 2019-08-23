@@ -5,7 +5,9 @@ function Links(props) {
 
   const listItems = link_content.map(link => (
     <li key={link.url}>
-      <a href={link.url}>{link.name}</a>
+      <a href={link.url} style={{ color: link.color }}>
+        {link.name}
+      </a>
     </li>
   ));
 
