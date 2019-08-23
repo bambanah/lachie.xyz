@@ -4,8 +4,11 @@ import { compose } from "redux";
 import firebaseConnect from "react-redux-firebase/lib/firebaseConnect";
 import { isLoaded, isEmpty } from "react-redux-firebase/lib/helpers";
 import { withHandlers } from "recompose";
+import { get } from "lodash";
 
-function Todos({ links, firebase, addSampleTodo, removeSampleTodo }) {
+function Todos({ links, firebase, auth, addSampleTodo, removeSampleTodo }) {
+  console.log(links);
+
   if (!isLoaded(links)) {
     return <div>Loading...</div>;
   }
@@ -35,20 +38,25 @@ function Todos({ links, firebase, addSampleTodo, removeSampleTodo }) {
 }
 
 export default compose(
-  firebaseConnect(() => [
-    "links" // { path: '/todos' } // object notation
+  firebaseConnect(props => [
+    `links/${props.userId}` // sync /links/userId from firebase into redux
   ]),
-  connect(state => ({
-    links: state.firebase.data.links
-    // profile: state.firebase.profile // load profile
+
+  connect((state, props) => ({
+    auth: state.firebase.auth,
+    links: get(state.firebase.data, `links.${props.userId}`)
   })),
+
   withHandlers({
     addSampleTodo: props => () => {
+      const userId = props.auth.uid;
       const sampleTodo = { text: "Sample", done: false };
-      return props.firebase.push("links", sampleTodo);
+      return props.firebase.push(`links/${userId}`, sampleTodo);
     },
+
     removeSampleTodo: props => key => () => {
-      return props.firebase.remove(`links/${key}`);
+      const userId = props.auth.uid;
+      return props.firebase.remove(`links/${userId}/${key}`);
     }
   })
 )(Todos);

@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import firebaseConnect from "react-redux-firebase/lib/firebaseConnect";
-import { isLoaded, isEmpty } from "react-redux-firebase/lib/helpers";
-import { compose, withHandlers } from "recompose";
+import { isEmpty } from "react-redux-firebase/lib/helpers";
+import { compose } from "recompose";
 
 function DisplayAuthAction({ firebase, auth }) {
   function LoginButton() {
@@ -12,7 +12,7 @@ function DisplayAuthAction({ firebase, auth }) {
           firebase.login({ provider: "google", type: "popup" });
         }}
       >
-        Login
+        Login with Google
       </button>
     );
   }
@@ -29,23 +29,10 @@ function DisplayAuthAction({ firebase, auth }) {
     );
   }
 
-  if (!isLoaded(auth)) {
-    return <div>Loading...</div>;
-  }
   if (isEmpty(auth)) {
-    return (
-      <div>
-        <p>Auth is empty</p>
-        <LoginButton />
-      </div>
-    );
+    return <LoginButton />;
   }
-  return (
-    <div>
-      <p>Hey there, {auth.displayName}</p>
-      <LogoutButton />
-    </div>
-  );
+  return <LogoutButton />;
 }
 
 const enhance = compose(

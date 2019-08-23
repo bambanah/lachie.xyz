@@ -150,4 +150,22 @@ body,
       }
     }
   }
+
+  .auth-wrapper {
+    position: absolute;
+    bottom: 5px;
+
+    button {
+      background-color: white;
+      box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.082);
+      border: none;
+      padding: 3px 10px;
+      border-radius: 2px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(243, 243, 243);
+      }
+    }
+  }
 }
