@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import firebaseConnect from "react-redux-firebase/lib/firebaseConnect";
@@ -46,7 +45,7 @@ export default compose(
   withHandlers({
     addSampleTodo: props => () => {
       const sampleTodo = { text: "Sample", done: false };
-      return props.firebase.push("links/-Lmmj7vhUyhiNNnxOdmd", sampleTodo);
+      return props.firebase.push("links", sampleTodo);
     },
     removeSampleTodo: props => key => () => {
       return props.firebase.remove(`links/${key}`);
