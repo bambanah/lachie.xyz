@@ -1,14 +1,18 @@
 import React from "react";
-import "./styles.scss";
+import "../styles.scss";
 
 import LinkWrapper from "./LinkWrapper";
-import DisplayAuthAction from "./DisplayAuthAction";
+import DisplayAuthAction from "../auth/DisplayAuthAction";
 import { compose } from "recompose";
 import { connect } from "react-redux";
 import firebaseConnect from "react-redux-firebase/lib/firebaseConnect";
-import { isEmpty } from "react-redux-firebase/lib/helpers";
+import { isEmpty, isLoaded } from "react-redux-firebase/lib/helpers";
 
-function Startpage({ auth, firebase, getLinks }) {
+function Startpage({ auth }) {
+  if (!isLoaded(auth)) {
+    return <div>Loading...</div>;
+  }
+
   if (isEmpty(auth)) {
     return (
       <div>

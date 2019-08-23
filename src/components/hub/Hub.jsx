@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-
 import { Link } from "react-router-dom";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 
-import DisplayAuthAction from "./DisplayAuthAction";
-
-import Todos from "./Todos";
+import DisplayAuthAction from "../auth/DisplayAuthAction";
 
 library.add(fab);
 
@@ -26,9 +23,6 @@ class Hub extends Component {
             </li>
             <li>
               <DisplayAuthAction />
-            </li>
-            <li>
-              <Todos />
             </li>
           </ul>
         </div>

@@ -4,31 +4,10 @@ import firebaseConnect from "react-redux-firebase/lib/firebaseConnect";
 import { isEmpty } from "react-redux-firebase/lib/helpers";
 import { compose } from "recompose";
 
-function DisplayAuthAction({ firebase, auth }) {
-  function LoginButton() {
-    return (
-      <button
-        onClick={() => {
-          firebase.login({ provider: "google", type: "popup" });
-        }}
-      >
-        Login with Google
-      </button>
-    );
-  }
+import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
 
-  function LogoutButton() {
-    return (
-      <button
-        onClick={() => {
-          firebase.logout();
-        }}
-      >
-        Logout
-      </button>
-    );
-  }
-
+function DisplayAuthAction({ auth }) {
   if (isEmpty(auth)) {
     return <LoginButton />;
   }
