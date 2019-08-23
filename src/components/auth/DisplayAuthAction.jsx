@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import firebaseConnect from "react-redux-firebase/lib/firebaseConnect";
 import { isLoaded, isEmpty } from "react-redux-firebase/lib/helpers";
-import { compose, withHandlers } from "recompose";
+import { compose } from "recompose";
 
 function DisplayAuthAction({ firebase, auth }) {
   function LoginButton() {
