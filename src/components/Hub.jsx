@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 
+import DisplayAuthAction from "./auth/DisplayAuthAction";
+
 library.add(fab);
 
-class App extends Component {
+class Hub extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="hub-container">
         <div>This is the main hub of the site.</div>
         <div>
           <ul>
@@ -20,10 +22,13 @@ class App extends Component {
             <li>
               <Link to="/startpage">Start Page</Link>
             </li>
+            <li>
+              <DisplayAuthAction />
+            </li>
           </ul>
         </div>
       </div>
     );
   }
 }
-export default App;
+export default Hub;
