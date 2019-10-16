@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import "firebase/auth";
 
 import { createStore, combineReducers } from "redux";
@@ -45,8 +45,8 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
       <Router>
-        <Route exact path="/" component={Construction} />
-        {/* <Route path="/construction" component={Construction} /> */}
+        <Route exact path="/" component={Home} />
+        <Route path="/construction" component={Construction} />
         <Route path="/hub" component={Hub} />
         <Route path="/startpage" component={Startpage} />
       </Router>
