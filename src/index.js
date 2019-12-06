@@ -10,8 +10,8 @@ import firebaseReducer from "react-redux-firebase/lib/reducer";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Hub from "./components/Hub";
-import Home from "./components/Home";
+import Hub from "./components/hub/Hub";
+import Home from "./components/hub/Home";
 import Construction from "./components/Construction";
 import Startpage from "./components/startpage/Startpage";
 
