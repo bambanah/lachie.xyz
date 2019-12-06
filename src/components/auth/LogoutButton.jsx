@@ -1,19 +1,16 @@
-import React, { Component } from "react";
-import firebase from "firebase/app";
+import React from "react";
+import firebaseConnect from "react-redux-firebase/lib/firebaseConnect";
 
-export default class LogoutButton extends Component {
-  render() {
-    return (
-      <button
-        onClick={() => {
-          firebase
-            .app()
-            .auth()
-            .signOut();
-        }}
-      >
-        Sign out
-      </button>
-    );
-  }
+function LogoutButton({ firebase }) {
+  return (
+    <button
+      onClick={() => {
+        firebase.logout();
+      }}
+    >
+      Logout
+    </button>
+  );
 }
+
+export default firebaseConnect()(LogoutButton);
