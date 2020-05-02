@@ -25,12 +25,11 @@ function Startpage({ auth }) {
 
   return (
     <div className="startpage-container">
-      sup
       <div className="content-wrapper">
         <div className="content">
-          <div className="splash">
+          {/* <div className="splash">
             <h1>Hello</h1>
-          </div>
+          </div> */}
           <ErrorBoundary>
             <div className="links-container">
               <LinkWrapper userId={auth.uid} />

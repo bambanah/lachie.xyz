@@ -134,6 +134,7 @@ body,
         font-family: "PT Mono", monospace;
 
         .wrapper-title {
+          // Default background colour if none is specified in data
           background-color: rgb(255, 166, 111);
           padding: 5px;
           text-align: center;
