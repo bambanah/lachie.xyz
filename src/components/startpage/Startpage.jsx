@@ -5,8 +5,7 @@ import LinkWrapper from "./LinkWrapper";
 import DisplayAuthAction from "../auth/DisplayAuthAction";
 import { compose } from "recompose";
 import { connect } from "react-redux";
-import firebaseConnect from "react-redux-firebase/lib/firebaseConnect";
-import { isEmpty, isLoaded } from "react-redux-firebase/lib/helpers";
+import { isEmpty, isLoaded, firebaseConnect } from "react-redux-firebase";
 
 import ErrorBoundary from "../ErrorBoundary";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import firebaseConnect from "react-redux-firebase/lib/firebaseConnect";
+import { firebaseConnect } from "react-redux-firebase";
 
 function LogoutButton({ firebase }) {
   return (

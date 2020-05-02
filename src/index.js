@@ -4,6 +4,8 @@ import { Provider } from "react-redux";
 
 import firebase from "firebase/app";
 import "firebase/auth";
+
+import "firebase/database";
 import { firebaseConfig } from "./config/firebase";
 
 import { createStore, combineReducers, compose } from "redux";
@@ -18,8 +20,6 @@ import Hub from "./components/hub/Hub";
 import Home from "./components/hub/Home";
 import Construction from "./components/Construction";
 import Startpage from "./components/startpage/Startpage";
-
-
 
 // react-redux-firebase config
 const rrfConfig = {
@@ -59,4 +59,3 @@ const Root = ({ store }) => (
 
 // Setup react-redux so that connect HOC can be used
 ReactDOM.render(<Root store={store} />, document.getElementById("root"));
-
