@@ -22,6 +22,8 @@ function Links(props) {
 }
 
 function LinkWrapper({ linkCategories }) {
+  let edit_mode = false;
+
   return (
     <>
       {linkCategories &&
@@ -46,7 +48,7 @@ function LinkWrapper({ linkCategories }) {
                 {category_name}
               </div>
               <div className="wrapper-body col">
-                <Links content={category} />
+                <Links content={category} edit={edit_mode} />
               </div>
             </div>
           );

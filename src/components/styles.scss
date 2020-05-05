@@ -115,13 +115,12 @@ body,
 
   .content {
     color: rgb(82, 82, 82);
+    flex: 9 0 auto;
 
-    h1 {
-      font-family: "Pacifico", sans-serif;
-      font-weight: bold;
-      font-size: 4rem;
-      text-align: center;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .links-container {
       display: flex;
@@ -175,15 +174,15 @@ body,
     }
   }
 
-  .auth-wrapper {
-    position: absolute;
-    bottom: 5px;
+  .footer {
+    flex: 0 0 auto;
 
     button {
       background-color: white;
       box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.082);
       border: none;
       padding: 3px 10px;
+      margin: 0 5px;
       border-radius: 2px;
 
       &:hover {
@@ -191,5 +190,13 @@ body,
         background-color: rgb(243, 243, 243);
       }
     }
+  }
+
+  .menu {
+    position: absolute;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
   }
 }

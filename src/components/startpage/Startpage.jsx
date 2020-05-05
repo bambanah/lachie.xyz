@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { isEmpty, isLoaded, firebaseConnect } from "react-redux-firebase";
 
 import ErrorBoundary from "../ErrorBoundary";
+import EditLinks from "./EditLinks";
 
 function Startpage({ auth }) {
   if (!isLoaded(auth)) {
@@ -27,22 +28,28 @@ function Startpage({ auth }) {
     <div className="startpage-container">
       <div className="content-wrapper">
         <div className="content">
-          {/* <div className="splash">
-            <h1>Hello</h1>
-          </div> */}
           <ErrorBoundary>
             <div className="links-container">
               <LinkWrapper userId={auth.uid} />
             </div>
           </ErrorBoundary>
         </div>
-        <div className="auth-wrapper">
+        <div className="footer">
+          <button onClick={openMenu()}>menu</button>
+        </div>
+        <div className="menu">
+          <button onClick={editLinks()}>Yeet</button>
           <DisplayAuthAction />
+          <EditLinks></EditLinks>
         </div>
       </div>
     </div>
   );
 }
+
+function openMenu() {}
+
+function editLinks() {}
 
 const enhance = compose(
   firebaseConnect(),
