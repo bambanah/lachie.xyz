@@ -1,11 +1,9 @@
 import React from "react";
 
-function EditLinks() {
+export default function EditLinks() {
   return (
     <>
-      <p>This is the main component</p>
+      <div>Edit</div>
     </>
   );
 }
-
-export default EditLinks;
