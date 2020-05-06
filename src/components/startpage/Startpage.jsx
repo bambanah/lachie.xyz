@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles.scss";
 
 import LinkWrapper from "./LinkWrapper";
@@ -11,6 +11,8 @@ import ErrorBoundary from "../ErrorBoundary";
 import Menu from "./Menu";
 
 function Startpage({ auth }) {
+  const [state, setState] = useState({ active: false });
+
   if (!isLoaded(auth)) {
     return <div>Loading...</div>;
   }
@@ -35,17 +37,19 @@ function Startpage({ auth }) {
           </ErrorBoundary>
         </div>
         <div className="footer">
-          <button onClick={openMenu()}>menu</button>
+          <button onClick={() => setState({ active: !state.active })}>
+            menu
+          </button>
         </div>
-        <div className="menu">
-          <Menu></Menu>
-        </div>
+        {state.active && (
+          <div className="menu">
+            <Menu></Menu>
+          </div>
+        )}
       </div>
     </div>
   );
 }
-
-function openMenu() {}
 
 const enhance = compose(
   firebaseConnect(),

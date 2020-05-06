@@ -193,10 +193,8 @@ body,
   }
 
   .menu {
-    position: absolute;
-    bottom: 0;
-    height: 20px;
+    flex: 1 0 auto;
+    height: 50px;
     width: 100%;
-    overflow: hidden;
   }
 }
