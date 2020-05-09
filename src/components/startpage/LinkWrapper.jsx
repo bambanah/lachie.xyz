@@ -1,14 +1,6 @@
 import React from "react";
-import { compose, withHandlers } from "recompose";
-import { connect, useSelector } from "react-redux";
-import {
-  firebaseConnect,
-  useFirebaseConnect,
-  isLoaded,
-  isEmpty,
-} from "react-redux-firebase";
-import { get } from "lodash";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
+import { useFirebaseConnect, isEmpty } from "react-redux-firebase";
 
 function Links(props) {
   return (
@@ -79,30 +71,3 @@ export default function LinkWrapper(props) {
     );
   }
 }
-
-LinkWrapper.propTypes = {
-  linkCategories: PropTypes.object,
-};
-
-// export default compose(
-//   firebaseConnect((props) => [
-//     `users/${props.userId}/links`, // sync /links/userId from firebase into redux
-//   ]),
-
-//   connect((state, props) => ({
-//     linkCategories: get(state.firebase.data, `users.${props.userId}.links`),
-//   })),
-
-//   withHandlers({
-//     addLink: (props) => () => {
-//       const userId = props.auth.uid;
-//       const sampleTodo = { text: "Sample", done: false };
-//       return props.firebase.push(`links/${userId}`, sampleTodo);
-//     },
-
-//     removeLink: (props) => (key) => () => {
-//       const userId = props.auth.uid;
-//       return props.firebase.remove(`links/${userId}/${key}`);
-//     },
-//   })
-// )(LinkWrapper);
