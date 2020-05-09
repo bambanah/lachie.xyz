@@ -8,10 +8,10 @@ import { connect } from "react-redux";
 import { isEmpty, isLoaded, firebaseConnect } from "react-redux-firebase";
 
 import ErrorBoundary from "../ErrorBoundary";
-import Menu from "./Menu";
 
 function Startpage({ auth }) {
-  const [state, setState] = useState({ active: false });
+  const initialState = { active: false, editMode: false };
+  const [state, setState] = useState(initialState);
 
   if (!isLoaded(auth)) {
     return <div>Loading...</div>;
@@ -37,15 +37,11 @@ function Startpage({ auth }) {
           </ErrorBoundary>
         </div>
         <div className="footer">
-          <button onClick={() => setState({ active: !state.active })}>
-            menu
+          <button onClick={() => setState({ editMode: !state.editMode })}>
+            edit
           </button>
+          <DisplayAuthAction />
         </div>
-        {state.active && (
-          <div className="menu">
-            <Menu></Menu>
-          </div>
-        )}
       </div>
     </div>
   );
