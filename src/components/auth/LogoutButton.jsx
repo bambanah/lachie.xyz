@@ -8,7 +8,7 @@ function LogoutButton({ firebase }) {
         firebase.logout();
       }}
     >
-      Logout
+      logout
     </button>
   );
 }
