@@ -48,7 +48,8 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
       <Router>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Construction} />
+        <Route path="/home" component={Home} />
         <Route path="/construction" component={Construction} />
         <Route path="/hub" component={Hub} />
         <Route path="/startpage" component={Startpage} />
