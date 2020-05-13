@@ -14,7 +14,6 @@ export default function Category(props) {
     divStyle = {
       backgroundColor: values._color,
     };
-    delete values._color;
   } else {
     divStyle = {};
   }
@@ -28,8 +27,10 @@ export default function Category(props) {
         <ul>
           {values &&
             Object.keys(values).map((link_name) => {
-              const link_url = values[link_name];
-              return <Link key={link_url} url={link_url} name={link_name} />;
+              if (link_name !== "_color") {
+                const link_url = values[link_name];
+                return <Link key={link_url} url={link_url} name={link_name} />;
+              }
             })}
         </ul>
       </div>
