@@ -38,7 +38,7 @@ function Startpage({ auth }) {
         </div>
         <div className="footer">
           <button onClick={() => setState({ editMode: !state.editMode })}>
-            edit
+            {state.editMode ? "save" : "edit"}
           </button>
           <DisplayAuthAction />
         </div>
