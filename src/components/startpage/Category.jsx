@@ -26,12 +26,12 @@ export default function Category(props) {
       <div className="wrapper-body col">
         <ul>
           {values &&
-            Object.keys(values).map((link_name) => {
-              if (link_name !== "_color") {
+            Object.keys(values) // Get array of keys from link values
+              .filter((link_name) => link_name !== "_color") // Don't display color variable in link list
+              .map((link_name) => {
                 const link_url = values[link_name];
                 return <Link key={link_url} url={link_url} name={link_name} />;
-              }
-            })}
+              })}
         </ul>
       </div>
     </div>
