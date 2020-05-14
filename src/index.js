@@ -8,7 +8,7 @@ import "firebase/auth";
 import "firebase/database";
 import { firebaseConfig } from "./config/firebase";
 
-import { createStore, combineReducers, compose } from "redux";
+import { createStore, combineReducers } from "redux";
 import {
   ReactReduxFirebaseProvider,
   firebaseReducer,

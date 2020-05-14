@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles.scss";
 
 import LinkWrapper from "./LinkWrapper";
@@ -10,6 +10,9 @@ import { isEmpty, isLoaded, firebaseConnect } from "react-redux-firebase";
 import ErrorBoundary from "../ErrorBoundary";
 
 function Startpage({ auth }) {
+  const initialState = { active: false, editMode: false };
+  const [state, setState] = useState(initialState);
+
   if (!isLoaded(auth)) {
     return <div>Loading...</div>;
   }
@@ -27,16 +30,16 @@ function Startpage({ auth }) {
     <div className="startpage-container">
       <div className="content-wrapper">
         <div className="content">
-          {/* <div className="splash">
-            <h1>Hello</h1>
-          </div> */}
           <ErrorBoundary>
             <div className="links-container">
               <LinkWrapper userId={auth.uid} />
             </div>
           </ErrorBoundary>
         </div>
-        <div className="auth-wrapper">
+        <div className="footer">
+          <button onClick={() => setState({ editMode: !state.editMode })}>
+            {state.editMode ? "save" : "edit"}
+          </button>
           <DisplayAuthAction />
         </div>
       </div>

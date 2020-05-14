@@ -7,27 +7,27 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: ["babel-loader"],
       },
       {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
-      }
-    ]
+        test: /\.(css|scss)$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"]
+    extensions: ["*", ".js", ".jsx"],
   },
   output: {
     path: __dirname + "/dist",
     publicPath: "/",
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     contentBase: "./dist",
     clientLogLevel: "info",
     historyApiFallback: true,
-    hot: true
-  }
+    hot: true,
+  },
 };
