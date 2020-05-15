@@ -20,6 +20,8 @@ export default function Category(props) {
     divStyle = {};
   }
 
+  const path = `users/${props.userId}/links/${state.name}`;
+
   return (
     <div className="link-wrapper">
       <div className="wrapper-title" style={divStyle}>
@@ -38,6 +40,7 @@ export default function Category(props) {
                     url={link_url}
                     name={link_name}
                     edit={state.edit}
+                    path={path}
                   />
                 );
               })}
