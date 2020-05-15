@@ -11,22 +11,17 @@ export default function LinkWrapper(props) {
     setState(props);
   }, [props]);
 
-  let linkCategories = useSelector(
+  let categories = useSelector(
     ({
       firebase: {
-        ordered: { users },
+        data: { users },
       },
     }) => users && users[props.userId].links
   );
 
-  if (isEmpty(linkCategories)) {
+  if (isEmpty(categories)) {
     return <div>Loading...</div>;
   } else {
-    let categories = {};
-    linkCategories.forEach((category) => {
-      categories[category.key] = category.value;
-    });
-
     return (
       <>
         {categories &&
