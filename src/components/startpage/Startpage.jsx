@@ -32,7 +32,7 @@ function Startpage({ auth }) {
         <div className="content">
           <ErrorBoundary>
             <div className="links-container">
-              <LinkWrapper userId={auth.uid} />
+              <LinkWrapper userId={auth.uid} edit={state.editMode} />
             </div>
           </ErrorBoundary>
         </div>

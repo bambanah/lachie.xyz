@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useFirebaseConnect, isEmpty } from "react-redux-firebase";
 import Category from "./Category";
 
 export default function LinkWrapper(props) {
   useFirebaseConnect(`users/${props.userId}/links`);
+
+  const [state, setState] = useState(props);
+  useEffect(() => {
+    setState(props);
+  }, [props]);
 
   let linkCategories = useSelector(
     ({
@@ -33,6 +38,7 @@ export default function LinkWrapper(props) {
                 key={category_name}
                 name={category_name}
                 values={category_values}
+                edit={state.edit}
               />
             );
           })}
