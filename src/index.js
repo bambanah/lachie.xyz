@@ -60,7 +60,7 @@ const Root = ({ store }) => (
           </Route>
 
           <Route exact path="/projects" component={Projects} />
-          <Route exact path="/projects/project_a" component={ProjectA} />
+          <Route path="/projects/project_a" component={ProjectA} />
 
           <Route path="/playground/" component={Playground} />
           <Route path="/playground/startpage" component={Startpage} />
