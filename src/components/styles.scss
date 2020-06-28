@@ -153,18 +153,43 @@ a {
 }
 
 .projects-content {
-  // background-color: #040404;
   color: inherit;
   padding-left: 10%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   h1 {
     font-family: "Roboto Slab", serif;
     font-size: 5em;
+    margin: 0;
+    margin-bottom: 2rem;
 
     background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     background-repeat: no-repeat;
     background-size: 2.5em 0.1em;
     background-position: 0 100%;
+  }
+
+  .project-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: 1.5em;
+      font-family: "Roboto Slab", serif;
+
+      a {
+        color: #ccc;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
   }
 }
 
