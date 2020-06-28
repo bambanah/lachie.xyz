@@ -22,6 +22,7 @@ import Projects from "./components/projects/Projects";
 import Playground from "./components/playground/Playground";
 import Header from "./components/nav/Header";
 import Footer from "./components/nav/Footer";
+import ProjectA from "./components/projects/ProjectA";
 
 // react-redux-firebase config
 const rrfConfig = {
@@ -58,7 +59,8 @@ const Root = ({ store }) => (
             <Redirect to="/" />
           </Route>
 
-          <Route path="/projects" component={Projects} />
+          <Route exact path="/projects" component={Projects} />
+          <Route exact path="/projects/project_a" component={ProjectA} />
 
           <Route path="/playground/" component={Playground} />
           <Route path="/playground/startpage" component={Startpage} />
