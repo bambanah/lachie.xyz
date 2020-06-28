@@ -7,11 +7,15 @@ export default function Projects() {
       name: "project_a",
       name_display: "Project A",
       content: "This project is about this",
+      main_image:
+        "https://cdn.dribbble.com/users/413551/screenshots/12395451/media/75de475e383ea541a3ceac387010858d.png",
     },
     {
       name: "project_b",
       name_display: "Second Project",
       content: "This project is about another thing",
+      main_image:
+        "https://images.unsplash.com/photo-1527112862739-c3b9466d902e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format",
     },
   ];
 
@@ -39,7 +43,10 @@ export default function Projects() {
     var previewText = preview.name_display;
 
     return (
-      <div className="project-preview">
+      <div
+        className="project-preview"
+        style={{ backgroundImage: `url(${preview.main_image})` }}
+      >
         <h1>{previewText}</h1>
       </div>
     );
