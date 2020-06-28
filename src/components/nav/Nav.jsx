@@ -6,18 +6,18 @@ export default function Nav(props) {
     <nav>
       <ul>
         <li>
-          <NavLink to="/home" activeClassName="link-active">
-            Home
+          <NavLink exact to="/" activeClassName="link-active">
+            home
           </NavLink>
         </li>
         <li>
           <NavLink to="/projects" activeClassName="link-active">
-            Projects
+            projects
           </NavLink>
         </li>
         <li>
           <NavLink to="/playground" activeClassName="link-active">
-            Playground
+            playground
           </NavLink>
         </li>
       </ul>
