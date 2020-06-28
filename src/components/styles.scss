@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500|Raleway:300,400,500,600,700|Roboto+Mono|Fira+Code");
+// Import fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500|Raleway:300,400,500,600,700|Roboto+Mono|Fira+Code|Righteous|Roboto+Slab:wght@700");
 
+// Globals
 html,
 body,
 #root {
@@ -9,25 +11,49 @@ body,
   margin: 0;
 }
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
+  position: relative;
 }
 
 a {
   text-decoration: none;
+  color: white;
 }
 
+// Root styling
+#root {
+  padding: 0 5rem;
+  display: flex;
+
+  flex-direction: column;
+
+  // Dark background, light text
+  background-color: #0e0e0e;
+  color: white;
+
+  .root-content {
+    flex: 1 0 auto;
+  }
+}
+
+// Navigation header
 .site-header {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 2em 5em;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 
   font-family: "Fira Code", monospace;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 
   .brand {
     flex: 1 1 auto;
+    font-family: "Roboto Mono", serif;
+    font-size: 1.2em;
 
     a {
       padding: 5px;
@@ -45,23 +71,32 @@ a {
       li {
         list-style: none;
         display: inline;
-        margin-left: 1em;
+        margin-left: 1rem;
 
         a:hover {
           text-decoration: line-through;
+        }
+
+        & .link-active {
+          background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+          background-repeat: no-repeat;
+          background-size: 100% 0.1em;
+          background-position: 0 100%;
         }
       }
     }
   }
 }
 
+//  Navigation footer
 .site-footer {
   font-family: "Fira Code", monospace;
   text-align: left;
   width: 100%;
-  padding: 2em 5em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 
-  font-size: 0.8em;
+  font-size: 0.8rem;
 
   ul {
     margin: 0;
@@ -77,33 +112,59 @@ a {
   justify-content: center;
   height: 100%;
 
-  // Dark background, light text
-  background-color: #0e0e0e;
-  color: white;
-  a {
+  .hero-text {
+    margin: 0;
     color: white;
-  }
+    font-family: "Righteous", serif;
+    font-size: 12em;
+    text-shadow: 0.03em 0.03em 0 #0e0e0e;
+    z-index: 100;
 
-  .hero {
-    width: 100%;
-    flex: 1 0 auto;
-    padding: 0 5em;
+    &:after {
+      content: attr(data-shadow);
+      position: absolute;
+      top: 0.06em;
+      left: 0.06em;
+      z-index: -1;
+      text-shadow: none;
+      background-image: linear-gradient(
+        45deg,
+        transparent 45%,
+        #84fab0 45%,
+        #8fd3f4 55%,
+        transparent 0
+      );
+      background-size: 0.05em 0.05em;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation: shad-anim 15s linear infinite;
+
+      @keyframes shad-anim {
+        0% {
+          background-position: 0 0;
+        }
+        0% {
+          background-position: 100% -100%;
+        }
+      }
+    }
   }
 }
 
-.hub-container {
-  ul {
-    list-style: none;
+.projects-content {
+  // background-color: #040404;
+  color: inherit;
+  padding-left: 10%;
 
-    a {
-      text-decoration: none;
-      color: black;
-      font-family: "Montserrat", sans-serif;
+  h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: 5em;
 
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-repeat: no-repeat;
+    background-size: 2.5em 0.1em;
+    background-position: 0 100%;
   }
 }
 
