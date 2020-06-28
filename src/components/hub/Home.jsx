@@ -1,12 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import "../styles.scss";
+import Header from "../nav/Header";
+import Footer from "../nav/Footer";
 
-export default class Home extends Component {
-  render() {
-    return (
-      <div className="home-container">
-        <p className="title">This is the home page</p>
+export default function Home(props) {
+  return (
+    <div className="home-container">
+      <Header />
+      <div className="hero">
+        <h1>Fancy text here</h1>
       </div>
-    );
-  }
+      <Footer />
+    </div>
+  );
 }

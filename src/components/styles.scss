@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500|Raleway:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500|Raleway:300,400,500,600,700|Roboto+Mono|Fira+Code");
 
 html,
 body,
@@ -7,6 +7,88 @@ body,
   height: 100%;
   padding: 0;
   margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 5em;
+
+  font-family: "Fira Code", monospace;
+  font-size: 0.9em;
+
+  .brand {
+    flex: 1 1 auto;
+
+    a {
+      padding: 5px;
+    }
+  }
+
+  nav {
+    flex: 1 1 auto;
+    text-align: right;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        display: inline;
+        margin-left: 1em;
+
+        a:hover {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+
+.site-footer {
+  font-family: "Fira Code", monospace;
+  text-align: left;
+  width: 100%;
+  padding: 2em 5em;
+
+  font-size: 0.8em;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  // Dark background, light text
+  background-color: #0e0e0e;
+  color: white;
+  a {
+    color: white;
+  }
+
+  .hero {
+    width: 100%;
+    flex: 1 0 auto;
+    padding: 0 5em;
+  }
 }
 
 .hub-container {
@@ -22,18 +104,6 @@ body,
         text-decoration: underline;
       }
     }
-  }
-}
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-
-  .title {
-    font-size: 2rem;
   }
 }
 
