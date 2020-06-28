@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import "../styles.scss";
+import "../../styles.scss";
 
 import LinkWrapper from "./LinkWrapper";
-import DisplayAuthAction from "../auth/DisplayAuthAction";
+import DisplayAuthAction from "../../auth/DisplayAuthAction";
 import { compose } from "recompose";
 import { connect } from "react-redux";
 import { isEmpty, isLoaded, firebaseConnect } from "react-redux-firebase";
 
-import ErrorBoundary from "../ErrorBoundary";
+import ErrorBoundary from "../../ErrorBoundary";
 
 function Startpage({ auth }) {
   const initialState = { active: false, editMode: false };

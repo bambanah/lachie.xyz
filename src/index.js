@@ -17,7 +17,7 @@ import {
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import Home from "./components/hub/Home";
-import Startpage from "./components/startpage/Startpage";
+import Startpage from "./components/playground/startpage/Startpage";
 import Projects from "./components/projects/Projects";
 import Playground from "./components/playground/Playground";
 import Header from "./components/nav/Header";

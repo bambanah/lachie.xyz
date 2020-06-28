@@ -11,7 +11,7 @@ body,
   margin: 0;
 
   // Dark background, light text
-  background-color: #0e0e0e;
+  background-color: #020200;
   color: white;
 }
 
@@ -123,7 +123,7 @@ a {
     color: white;
     font-family: "Righteous", serif;
     font-size: 12em;
-    text-shadow: 0.03em 0.03em 0 #0e0e0e;
+    text-shadow: 0.03em 0.03em 0 #020200;
     z-index: 100;
 
     &:after {
@@ -136,7 +136,7 @@ a {
       background-image: linear-gradient(
         45deg,
         transparent 45%,
-        #84fab0 45%,
+        #8fd3f4 45%,
         #8fd3f4 55%,
         transparent 0
       );
@@ -168,7 +168,7 @@ a {
     flex: 1 0 25%;
 
     display: flex;
-    padding-left: 20rem;
+    padding-left: 20%;
     height: 100%;
     flex-direction: column;
     justify-content: center;
@@ -227,7 +227,7 @@ a {
       margin: 0;
       margin-top: 0;
       padding: 0;
-      font-size: 55rem;
+      font-size: 30rem;
       white-space: nowrap;
       line-height: 45rem;
     }
