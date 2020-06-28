@@ -1,9 +1,13 @@
 import React from "react";
+import ProjectPreview from "./ProjectPreview";
 
 export default function Projects() {
   return (
-    <div>
-      <h3>This is the projects list</h3>
-    </div>
+    <>
+      <div className="projects-content">
+        <h1>Projects</h1>
+        <ProjectPreview />
+      </div>
+    </>
   );
 }
