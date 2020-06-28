@@ -156,6 +156,15 @@ a {
       }
     }
   }
+
+  a {
+    margin-top: 1rem;
+    font-family: "Fira Code", sans-serif;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .projects-content {

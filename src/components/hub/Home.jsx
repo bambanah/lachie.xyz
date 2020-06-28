@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles.scss";
+import { Link } from "react-router-dom";
 
 export default function Home(props) {
   return (
@@ -8,6 +9,7 @@ export default function Home(props) {
         <h1 className="hero-text" data-shadow="hello!">
           hello!
         </h1>
+        <Link to="projects">Check out my projects</Link>
       </div>
     </>
   );
