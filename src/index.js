@@ -16,12 +16,12 @@ import {
 
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
-import Hub from "./components/hub/Hub";
 import Home from "./components/hub/Home";
-import Construction from "./components/Construction";
 import Startpage from "./components/startpage/Startpage";
 import Projects from "./components/projects/Projects";
 import Playground from "./components/playground/Playground";
+import Header from "./components/nav/Header";
+import Footer from "./components/nav/Footer";
 
 // react-redux-firebase config
 const rrfConfig = {
@@ -50,18 +50,21 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
       <Router>
-        <Route exact path="/" component={Home} />
-        <Route path="/home">
-          <Redirect to="/" />
-        </Route>
+        <Header></Header>
 
-        <Route path="/hub" component={Hub} />
-        <Route path="/projects" component={Projects} />
+        <div className="root-content">
+          <Route exact path="/" component={Home} />
+          <Route path="/home">
+            <Redirect to="/" />
+          </Route>
 
-        <Route path="/playground/" component={Playground} />
-        <Route path="/playground/startpage" component={Startpage} />
+          <Route path="/projects" component={Projects} />
 
-        <Route path="/construction" component={Construction} />
+          <Route path="/playground/" component={Playground} />
+          <Route path="/playground/startpage" component={Startpage} />
+        </div>
+
+        <Footer></Footer>
       </Router>
     </ReactReduxFirebaseProvider>
   </Provider>
