@@ -125,6 +125,7 @@ a {
     font-size: 12em;
     text-shadow: 0.03em 0.03em 0 #020200;
     z-index: 100;
+    user-select: none;
 
     &:after {
       content: attr(data-shadow);
