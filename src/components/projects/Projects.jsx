@@ -24,7 +24,7 @@ export default function Projects() {
     const listItems = projects.map((project) => (
       <li key={project.name}>
         <Link
-          to={`projects/${project.name}`}
+          to={`/projects/${project.name}`}
           onMouseEnter={() => setPreview(project)}
           onMouseLeave={() => setPreview({})}
         >

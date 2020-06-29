@@ -1,5 +1,8 @@
 const webpack = require("webpack");
 
+const images = require("remark-images");
+const emoji = require("remark-emoji");
+
 module.exports = {
   entry: "./src/index.js",
   module: {
@@ -12,6 +15,20 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.mdx$/,
+        use: [
+          {
+            loader: "babel-loader",
+          },
+          {
+            loader: "@mdx-js/loader",
+            options: {
+              remarkPlugins: [images, emoji],
+            },
+          },
+        ],
       },
     ],
   },
@@ -29,5 +46,8 @@ module.exports = {
     clientLogLevel: "info",
     historyApiFallback: true,
     hot: true,
+  },
+  node: {
+    fs: "empty",
   },
 };
