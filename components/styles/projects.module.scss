@@ -1,3 +1,10 @@
+.container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+}
+
 .list {
   font-family: "Roboto Slab", serif;
   flex: 1 0 25%;
@@ -68,8 +75,17 @@
 }
 
 .content {
-  height: 100%;
-  width: 100%;
+  flex: 1 0 auto;
+  width: 50rem;
+  margin: auto;
 
-  display: flex;
+  font-family: "Raleway", serif;
+
+  h1 {
+    font-weight: 700;
+  }
+
+  p {
+    color: yellow;
+  }
 }

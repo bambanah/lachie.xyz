@@ -58,7 +58,7 @@ export default function Projects() {
 
   return (
     <Layout>
-      <div className={styles.content}>
+      <div className={styles.container}>
         <ProjectList />
 
         <ProjectPreview />
