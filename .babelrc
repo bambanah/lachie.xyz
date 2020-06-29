@@ -1,4 +1,12 @@
 {
-  "presets": ["@babel/env", "@babel/react"],
-  "plugins": ["@babel/proposal-object-rest-spread"]
+  "presets": [
+    [
+      "next/babel",
+      {
+        "styled-jsx": {
+          "plugins": ["styled-jsx-plugin-sass"]
+        }
+      }
+    ]
+  ]
 }

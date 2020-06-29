@@ -1,8 +1,8 @@
-import React from "react";
+import styles from "../styles/nav.module.scss";
 
 export default function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className={styles.footer}>
       <ul>
         <li>
           <a href="https://github.com/Bambanah">GitHub</a>

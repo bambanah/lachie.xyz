@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import ArticleMarkdown from "./Content.mdx";
-// import marked from "marked";
+import ArticleMarkdown from "../../markdown/Content.mdx";
 
 export default function ProjectA() {
   const [state, setState] = useState({ markdown: "Loading..." });

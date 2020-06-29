@@ -1,0 +1,26 @@
+// Import fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500|Raleway:300,400,500,600,700,900|Roboto+Mono|Fira+Code|Righteous|Roboto+Slab:wght@700|Krona+One");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: #020200;
+  color: white;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

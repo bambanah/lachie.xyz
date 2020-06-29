@@ -1,0 +1,61 @@
+.header {
+  width: 100%;
+
+  padding: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+}
+
+.brand {
+  flex: 1 1 auto;
+  font-family: "Roboto Mono", serif;
+  font-size: 1.2em;
+
+  a {
+    padding: 5px;
+  }
+}
+
+.navbar {
+  flex: 1 1 auto;
+  text-align: right;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      display: inline;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.navlink {
+  &:hover {
+    text-decoration: line-through;
+  }
+}
+
+.footer {
+  font-family: "Fira Code", monospace;
+  text-align: left;
+  width: 100%;
+  padding: 0 5rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+
+  font-size: 0.8rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
