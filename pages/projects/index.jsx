@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Link from "next/link";
-import Layout from "../../components/Layout";
 
+import { getAllProjectData } from "../../lib/projects";
+
+import Layout from "../../components/Layout";
 import styles from "../../components/styles/projects.module.scss";
 
-function Projects() {
+export default function Projects({ allProjectData }) {
   const initialProjects = [
     {
       name: "project_a",
@@ -24,14 +26,14 @@ function Projects() {
   const [preview, setPreview] = useState({});
 
   function ProjectList() {
-    const listItems = projects.map((project) => (
-      <li key={project.name}>
-        <Link href={`/projects/${project.name}`}>
+    const listItems = allProjectData.map((project) => (
+      <li key={project.fileId}>
+        <Link href={`/projects/${project.fileId}`}>
           <a
             onMouseEnter={() => setPreview(project)}
             onMouseLeave={() => setPreview({})}
           >
-            {project.name_display}
+            {project.title}
           </a>
         </Link>
       </li>
@@ -49,9 +51,9 @@ function Projects() {
     return (
       <div
         className={styles.preview}
-        style={{ backgroundImage: `url(${preview.main_image})` }}
+        style={{ backgroundImage: `url(${preview.hero_image})` }}
       >
-        <h1>{preview.name_display}</h1>
+        <h1>{preview.title}</h1>
       </div>
     );
   }
@@ -67,4 +69,12 @@ function Projects() {
   );
 }
 
-export default Projects;
+export async function getStaticProps() {
+  const allProjectData = getAllProjectData();
+  console.log(allProjectData);
+  return {
+    props: {
+      allProjectData,
+    },
+  };
+}
