@@ -5,16 +5,20 @@ import Footer from "./nav/Footer";
 
 import styles from "./styles/layout.module.scss";
 
-function Layout({ children }) {
+function Layout(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Lachlan Underhill</title>
+        <title>
+          {(props.title !== undefined &&
+            props.title + " | Lachlan Underhill") ||
+            "Lachlan Underhill"}
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
-      {children}
+      {props.children}
       <Footer />
     </div>
   );

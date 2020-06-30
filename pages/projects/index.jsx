@@ -4,7 +4,7 @@ import Layout from "../../components/Layout";
 
 import styles from "../../components/styles/projects.module.scss";
 
-export default function Projects() {
+function Projects() {
   const initialProjects = [
     {
       name: "project_a",
@@ -57,7 +57,7 @@ export default function Projects() {
   }
 
   return (
-    <Layout>
+    <Layout title="Projects">
       <div className={styles.container}>
         <ProjectList />
 
@@ -66,3 +66,5 @@ export default function Projects() {
     </Layout>
   );
 }
+
+export default Projects;

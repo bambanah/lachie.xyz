@@ -1,5 +1,4 @@
 import Link from "next/link";
-import NavLink from "./NavLink";
 import { useRouter } from "next/router";
 
 import styles from "../styles/nav.module.scss";
@@ -35,9 +34,11 @@ export default function Nav() {
         <li>
           <Link href="/playground">
             <a
-              className={`${styles.navlink} ${
+              className={`
+              ${styles.navlink} ${
                 router.pathname == "/playground" ? "active" : ""
-              }`}
+              }
+              `}
             >
               playground
             </a>

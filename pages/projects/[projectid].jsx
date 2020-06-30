@@ -10,7 +10,7 @@ const Project = () => {
   const { projectid } = router.query;
 
   return (
-    <Layout>
+    <Layout title={projectid}>
       <div className={styles.content}>
         <Markdown />
       </div>
