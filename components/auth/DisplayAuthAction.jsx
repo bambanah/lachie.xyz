@@ -1,7 +1,5 @@
-import React from "react";
 import { connect } from "react-redux";
-import firebaseConnect from "react-redux-firebase/lib/firebaseConnect";
-import { isEmpty, isLoaded } from "react-redux-firebase/lib/helpers";
+import { isEmpty, isLoaded, firebaseConnect } from "react-redux-firebase";
 import { compose } from "recompose";
 
 import LoginButton from "./LoginButton";
@@ -19,8 +17,8 @@ function DisplayAuthAction({ auth }) {
 
 const enhance = compose(
   firebaseConnect(),
-  connect(state => ({
-    auth: state.firebase.auth
+  connect((state) => ({
+    auth: state.firebase.auth,
   }))
 );
 export default enhance(DisplayAuthAction);
