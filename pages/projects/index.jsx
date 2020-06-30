@@ -71,7 +71,7 @@ export default function Projects({ allProjectData }) {
 
 export async function getStaticProps() {
   const allProjectData = getAllProjectData();
-  console.log(allProjectData);
+
   return {
     props: {
       allProjectData,
