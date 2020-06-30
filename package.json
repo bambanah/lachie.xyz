@@ -1,4 +1,8 @@
 {
+  "name": "depot",
+  "version": "0.1.2",
+  "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -10,13 +14,16 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@mdx-js/loader": "^1.6.6",
     "@next/mdx": "^9.4.4",
+    "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
     "next": "^9.4.4",
     "next-images": "^1.4.0",
     "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-markdown": "^4.3.1"
+    "react-markdown": "^4.3.1",
+    "remark": "^12.0.0",
+    "remark-html": "^11.0.2"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
