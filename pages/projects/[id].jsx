@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // Fetch necessary data using params.id
   const projectData = await getProjectData(params.id);
-  console.log(projectData.contentHtml);
+
   return {
     props: {
       projectData,

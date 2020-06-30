@@ -24,7 +24,7 @@ export default function Nav() {
           <Link href="/projects">
             <a
               className={`${styles.navlink} ${
-                router.pathname == "/projects" ? "active" : ""
+                router.pathname.includes("/projects") ? "active" : ""
               }`}
             >
               projects
@@ -36,7 +36,7 @@ export default function Nav() {
             <a
               className={`
               ${styles.navlink} ${
-                router.pathname == "/playground" ? "active" : ""
+                router.pathname.includes("/playground") ? "active" : ""
               }
               `}
             >
