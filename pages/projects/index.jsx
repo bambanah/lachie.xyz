@@ -7,22 +7,6 @@ import Layout from "../../components/Layout";
 import styles from "../../components/styles/projects.module.scss";
 
 export default function Projects({ allProjectData }) {
-  const initialProjects = [
-    {
-      name: "project_a",
-      name_display: "Project A",
-      content: "This project is about this",
-      main_image: "/img/project_a.png",
-    },
-    {
-      name: "project_b",
-      name_display: "Second Project",
-      content: "This project is about another thing",
-      main_image: "/img/project_b.png",
-    },
-  ];
-
-  const [projects, setProjects] = useState(initialProjects);
   const [preview, setPreview] = useState({});
 
   function ProjectList() {

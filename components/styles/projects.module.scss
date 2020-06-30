@@ -79,13 +79,44 @@
   width: 50rem;
   margin: auto;
 
-  font-family: "Raleway", serif;
+  font-family: "Roboto Slab", serif;
 
   h1 {
-    font-weight: 700;
+    font-size: 3rem;
   }
 
   p {
-    color: yellow;
+    padding: 1.2em 0;
+  }
+
+  ul,
+  ol {
+    padding-left: 15px;
+  }
+
+  blockquote {
+    padding: 1em;
+    background-color: #242424;
+    border-radius: 3px;
+  }
+
+  pre {
+    background-color: #333;
+    padding: 10px;
+  }
+
+  code {
+    font-family: "Fira Code", monospace;
+    font-size: 1em;
+  }
+
+  a {
+    color: rgb(179, 179, 250);
+    text-decoration: underline;
+  }
+
+  hr {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+    margin: 1em 1em;
   }
 }
