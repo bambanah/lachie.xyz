@@ -15,7 +15,7 @@ export const projectList2 = {
   },
   sentiment_analysis: {
     repo_url: "Bambanah/CAB420-SentimentAnalysis",
-    display: "Sentiment Analysis",
-    image_name: "sentiment_analysis.png",
+    display: "Sentiment Analysis (Machine Learning)",
+    image_name: "sentiment_analysis.jpg",
   },
 };
