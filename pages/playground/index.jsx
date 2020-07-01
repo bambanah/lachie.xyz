@@ -1,4 +1,5 @@
 import Layout from "../../components/Layout";
+import styles from "../../components/styles/playground.module.scss";
 
 function Playground() {
   return (

@@ -18,7 +18,7 @@ function Layout(props) {
       </Head>
 
       <Header />
-      {props.children}
+      <section className={styles.section}>{props.children}</section>
       <Footer />
     </div>
   );
