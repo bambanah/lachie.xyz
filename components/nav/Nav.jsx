@@ -9,39 +9,19 @@ export default function Nav() {
   return (
     <nav className={styles.navbar}>
       <ul>
-        <li>
+        <li className={router.pathname == "/" ? "active" : ""}>
           <Link href="/">
-            <a
-              className={`${styles.navlink} ${
-                router.pathname == "/" ? "active" : ""
-              }`}
-            >
-              home
-            </a>
+            <a className={styles.nav_link}>home</a>
           </Link>
         </li>
-        <li>
+        <li className={router.pathname.includes("/projects") ? "active" : ""}>
           <Link href="/projects">
-            <a
-              className={`${styles.navlink} ${
-                router.pathname.includes("/projects") ? "active" : ""
-              }`}
-            >
-              projects
-            </a>
+            <a className={styles.nav_link}>projects</a>
           </Link>
         </li>
-        <li>
+        <li className={router.pathname.includes("/playground") ? "active" : ""}>
           <Link href="/playground">
-            <a
-              className={`
-              ${styles.navlink} ${
-                router.pathname.includes("/playground") ? "active" : ""
-              }
-              `}
-            >
-              playground
-            </a>
+            <a className={styles.nav_link}>playground</a>
           </Link>
         </li>
       </ul>
@@ -50,8 +30,9 @@ export default function Nav() {
         .active {
           background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
           background-repeat: no-repeat;
-          background-size: 100% 0.1em;
+          background-size: 100% 0.15em;
           background-position: 0 100%;
+          padding: 0 2px;
         }
       `}</style>
     </nav>

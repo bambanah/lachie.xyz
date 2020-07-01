@@ -1,23 +1,23 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { getAllProjectData } from "../../lib/projects";
+import { getAllProjectNames } from "../../lib/projects";
 
 import Layout from "../../components/Layout";
 import styles from "../../components/styles/projects.module.scss";
 
-export default function Projects({ allProjectData }) {
-  const [preview, setPreview] = useState({});
+export default function Projects({ repoNames }) {
+  const [preview, setPreview] = useState("");
 
   function ProjectList() {
-    const listItems = allProjectData.map((project) => (
-      <li key={project.fileId}>
-        <Link href={`/projects/${project.fileId}`}>
+    const listItems = repoNames.map((repoName) => (
+      <li key={repoName}>
+        <Link href={`/projects/${repoName}`}>
           <a
-            onMouseEnter={() => setPreview(project)}
-            onMouseLeave={() => setPreview({})}
+            onMouseEnter={() => setPreview(repoName)}
+            onMouseLeave={() => setPreview("")}
           >
-            {project.title}
+            {repoName}
           </a>
         </Link>
       </li>
@@ -35,9 +35,11 @@ export default function Projects({ allProjectData }) {
     return (
       <div
         className={styles.preview}
-        style={{ backgroundImage: `url(${preview.hero_image})` }}
+        style={{
+          backgroundImage: `url(${"img/" + preview.toLowerCase() + ".png"})`,
+        }}
       >
-        <h1>{preview.title}</h1>
+        <h1>{preview}</h1>
       </div>
     );
   }
@@ -54,11 +56,11 @@ export default function Projects({ allProjectData }) {
 }
 
 export async function getStaticProps() {
-  const allProjectData = getAllProjectData();
+  const repoNames = getAllProjectNames();
 
   return {
     props: {
-      allProjectData,
+      repoNames,
     },
   };
 }
