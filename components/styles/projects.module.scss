@@ -89,10 +89,12 @@
     &:first-of-type {
       font-size: 5rem;
       color: rgb(2, 2, 0);
+      display: inline-block;
+      padding: 0 10px;
 
       background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
       background-repeat: no-repeat;
-      background-size: 40% 90%;
+      background-size: 100% 90%;
       background-position: 0 100%;
     }
   }
