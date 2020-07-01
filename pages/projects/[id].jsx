@@ -1,15 +1,36 @@
 import Layout from "../../components/Layout";
 import styles from "../../components/styles/projects.module.scss";
 
-import { getAllProjectIds, getProjectData } from "../../lib/projects";
+import ReactMarkdown from "react-markdown";
+import Link from "next/link";
 
-export default function Project({ projectData }) {
+import { getMarkdownReadme } from "../../lib/projects";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
+export default function Project({ projectName, readmeContent }) {
   return (
-    <Layout title={projectData.title}>
+    <Layout title={projectName}>
+      <div
+        className={styles.hero}
+        style={{
+          background: `
+          linear-gradient(rgba(2, 2, 0, 0.2),
+          rgba(2, 2, 0, 0.2)),
+          url(${"/img/" + projectName.toLowerCase() + ".png"}) no-repeat center
+          `,
+          backgroundSize: `100vw`,
+        }}
+      ></div>
+
       <article className={styles.content}>
-        <h1 className="title">{projectData.title}</h1>
-        <img src={projectData.hero_image} />
-        <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
+        <Link href="/projects">
+          <a className={styles.back_link}>
+            <FontAwesomeIcon icon={faArrowLeft} /> back to projects
+          </a>
+        </Link>
+        <ReactMarkdown source={readmeContent} />
 
         <style jsx>{`
           .title {
@@ -22,23 +43,14 @@ export default function Project({ projectData }) {
   );
 }
 
-export async function getStaticPaths() {
-  // Return a list of possible values for id
-  const paths = getAllProjectIds();
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   // Fetch necessary data using params.id
-  const projectData = await getProjectData(params.id);
+  const readmeContent = await getMarkdownReadme(params.id);
 
   return {
     props: {
-      projectData,
+      projectName: params.id,
+      ...readmeContent,
     },
   };
 }

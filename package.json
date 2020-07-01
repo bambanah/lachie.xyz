@@ -23,10 +23,8 @@
     "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1",
     "remark": "^12.0.0",
-    "remark-html": "^11.0.2"
+    "remark-html": "^11.0.2",
+    "sass": "^1.26.9"
   },
-  "devDependencies": {
-    "node-sass": "^4.14.1",
-    "styled-jsx-plugin-sass": "^1.0.0"
-  }
+  "devDependencies": {}
 }
