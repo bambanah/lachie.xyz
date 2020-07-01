@@ -15,7 +15,7 @@ export default function Home() {
           hello!
         </h1>
         <Link href="/projects">
-          <a className="back-link">
+          <a>
             Check out my projects <FontAwesomeIcon icon={faArrowRight} />
           </a>
         </Link>
