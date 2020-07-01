@@ -1,0 +1,13 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  // flex: 1 0 auto;
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 1.5rem;
+}
