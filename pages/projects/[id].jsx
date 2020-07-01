@@ -4,7 +4,7 @@ import styles from "../../components/styles/projects.module.scss";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 
-import { getMarkdownReadme } from "../../lib/projects";
+import { getMarkdownReadme, getProjectInfo } from "../../lib/projects";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -46,7 +46,9 @@ export default function Project({ projectName, readmeContent }) {
 
 export async function getServerSideProps({ params }) {
   // Fetch necessary data using params.id
-  const readmeContent = await getMarkdownReadme(params.id);
+  const repoUrl = getProjectInfo(params.id).repo_url;
+
+  const readmeContent = await getMarkdownReadme(repoUrl);
 
   return {
     props: {
