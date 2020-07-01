@@ -30,6 +30,7 @@ export default function Project({ projectName, readmeContent }) {
             <FontAwesomeIcon icon={faArrowLeft} /> back to projects
           </a>
         </Link>
+        <br />
         <ReactMarkdown source={readmeContent} />
 
         <style jsx>{`
