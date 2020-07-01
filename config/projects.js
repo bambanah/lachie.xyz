@@ -1,8 +1,4 @@
-const projectList = ["Depot", "startpage", "CAB420-SentimentAnalysis"];
-
-export default projectList;
-
-export const projectList2 = {
+const projectList = {
   depot: {
     repo_url: "Bambanah/Depot",
     display: "Depot (This site)",
@@ -19,3 +15,5 @@ export const projectList2 = {
     image_name: "sentiment_analysis.jpg",
   },
 };
+
+export default projectList;
