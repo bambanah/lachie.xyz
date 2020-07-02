@@ -5,13 +5,14 @@ import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import useSWR from "swr";
 
-import { getMarkdownReadme, getProject } from "../../lib/projects";
+import {
+  getMarkdownReadme,
+  getProject,
+  getAllProjectIds,
+} from "../../lib/projects";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/router";
-import remark from "remark";
-import html from "remark-html";
 
 export default function Project({ projectId }) {
   const projectInfo = getProject(projectId);
@@ -62,12 +63,15 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
+  const projectIds = getAllProjectIds();
+  const paths = projectIds.map((id) => {
+    return {
+      params: { id: id },
+    };
+  });
+
   return {
-    paths: [
-      { params: { id: "depot" } },
-      { params: { id: "startpage" } },
-      { params: { id: "sentiment_analysis" } },
-    ],
+    paths: paths,
     fallback: false,
   };
 }
