@@ -47,7 +47,6 @@ export default function Project({ display, image_name, readmeContent }) {
 export async function getServerSideProps({ params }) {
   // Fetch necessary data using params.id
   const projectInfo = getProject(params.id);
-  console.log(projectInfo);
 
   const readmeContent = await getMarkdownReadme(projectInfo.repo_url);
 

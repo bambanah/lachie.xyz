@@ -6,5 +6,6 @@ const withMDX = require("@next/mdx")({
 module.exports = withImages(
   withMDX({
     pageExtensions: ["js", "jsx", "md", "mdx"],
+    distDir: "dist",
   })
 );
