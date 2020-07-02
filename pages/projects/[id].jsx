@@ -3,22 +3,29 @@ import styles from "../../components/styles/projects.module.scss";
 
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
+import useSWR from "swr";
 
 import { getMarkdownReadme, getProject } from "../../lib/projects";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
+import remark from "remark";
+import html from "remark-html";
 
-export default function Project({ display, image_name, readmeContent }) {
+export default function Project({ projectId }) {
+  const projectInfo = getProject(projectId);
+  const { data, error } = useSWR(projectInfo.repo_url, getMarkdownReadme);
+
   return (
-    <Layout title={display}>
+    <Layout title={projectInfo.display}>
       <div
         className={styles.hero}
         style={{
           background: `
           linear-gradient(rgba(2, 2, 0, 0.2),
           rgba(2, 2, 0, 0.2)),
-          url(${"/img/" + image_name}) no-repeat center
+          url(${"/img/" + projectInfo.image_name}) no-repeat center
           `,
           backgroundSize: `100vw`,
         }}
@@ -30,8 +37,10 @@ export default function Project({ display, image_name, readmeContent }) {
             <FontAwesomeIcon icon={faArrowLeft} /> back to projects
           </a>
         </Link>
+
         <br />
-        <ReactMarkdown source={readmeContent} />
+
+        {data && <ReactMarkdown source={data.readmeContent} />}
 
         <style jsx>{`
           .title {
@@ -44,16 +53,21 @@ export default function Project({ display, image_name, readmeContent }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
-  // Fetch necessary data using params.id
-  const projectInfo = getProject(params.id);
-
-  const readmeContent = await getMarkdownReadme(projectInfo.repo_url);
-
+export async function getStaticProps({ params }) {
   return {
     props: {
-      ...projectInfo,
-      ...readmeContent,
+      projectId: params.id,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { id: "depot" } },
+      { params: { id: "startpage" } },
+      { params: { id: "sentiment_analysis" } },
+    ],
+    fallback: false,
   };
 }

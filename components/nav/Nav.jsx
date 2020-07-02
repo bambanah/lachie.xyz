@@ -32,7 +32,6 @@ export default function Nav() {
           background-repeat: no-repeat;
           background-size: 100% 0.15em;
           background-position: 0 100%;
-          padding: 0 2px;
         }
       `}</style>
     </nav>
