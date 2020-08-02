@@ -11,11 +11,10 @@ function Tag({ name, fg, bg, key }) {
           background-color: ${bg};
           color: ${fg};
 
-          font-family: "Roboto Mono";
+          font-family: "Recursive";
           font-size: 0.9em;
-          // font-weight: bold;
           display: inline-block;
-          padding: 2px 2px;
+          padding: 2px 4px;
           border-radius: 2px;
           margin-right: 5px;
         }
