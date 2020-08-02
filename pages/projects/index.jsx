@@ -1,55 +1,24 @@
-import { useState } from "react";
-import Link from "next/link";
-
-import { getAllProjects, getAllProjectNames } from "../../lib/projects";
+import { getAllProjects } from "../../lib/projects";
 
 import Layout from "../../components/Layout";
+
 import styles from "../../components/styles/projects.module.scss";
+import ProjectCard from "../../components/ProjectCard";
 
 export default function Projects({ projects }) {
-  const [preview, setPreview] = useState("");
-
   function ProjectList() {
     const listItems = Object.keys(projects).map((projectId) => (
-      <li key={projectId}>
-        <Link href={`/projects/${projectId}`}>
-          <a
-            onMouseEnter={() => setPreview(projects[projectId])}
-            onMouseLeave={() => setPreview("")}
-          >
-            {projects[projectId].display}
-          </a>
-        </Link>
-      </li>
+      <ProjectCard id={projectId} project={projects[projectId]}></ProjectCard>
     ));
 
-    return (
-      <div className={styles.list}>
-        <h1>Projects</h1>
-        <ul>{listItems}</ul>
-      </div>
-    );
-  }
-
-  function ProjectPreview() {
-    return (
-      <div
-        className={styles.preview}
-        style={{
-          backgroundImage: `url(${"img/" + preview.image_name})`,
-        }}
-      >
-        <h1>{preview.display}</h1>
-      </div>
-    );
+    return <div className={styles.list}>{listItems}</div>;
   }
 
   return (
     <Layout title="Projects">
       <div className={styles.container}>
+        <h1>Projects</h1>
         <ProjectList />
-
-        <ProjectPreview />
       </div>
     </Layout>
   );
