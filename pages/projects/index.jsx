@@ -1,11 +1,11 @@
-import { getAllProjects, getTagStyles } from "../../lib/projects";
+import { getAllProjects } from "../../lib/projects";
 
 import Layout from "../../components/Layout";
 
 import styles from "../../components/styles/projects.module.scss";
 import ProjectCard from "../../components/ProjectCard";
 
-export default function Projects({ projects, tagStyles }) {
+export default function Projects({ projects }) {
   function ProjectList() {
     const listItems = Object.keys(projects).map((projectId) => (
       <ProjectCard id={projectId} project={projects[projectId]}></ProjectCard>
@@ -26,12 +26,10 @@ export default function Projects({ projects, tagStyles }) {
 
 export async function getStaticProps() {
   const projects = getAllProjects();
-  const tagStyles = getTagStyles();
 
   return {
     props: {
       projects,
-      tagStyles,
     },
   };
 }
