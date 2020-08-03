@@ -1,9 +1,8 @@
-import React from "react";
 import PropTypes from "prop-types";
 
-function Tag({ name, fg, bg, key }) {
+function Tag({ name, fg, bg }) {
   return (
-    <li className="tag" key={key}>
+    <li className="tag">
       <p>{name}</p>
 
       <style jsx>{`
@@ -27,6 +26,15 @@ function Tag({ name, fg, bg, key }) {
   );
 }
 
-Tag.propTypes = {};
+Tag.propTypes = {
+  name: PropTypes.string.isRequired,
+  fg: PropTypes.string,
+  bg: PropTypes.string,
+};
+
+Tag.defaultProps = {
+  fg: "#000",
+  bg: "#fff",
+};
 
 export default Tag;
