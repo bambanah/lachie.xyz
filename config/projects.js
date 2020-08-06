@@ -11,7 +11,7 @@ const projectList = {
     display: "Startpage",
     image_name: "startpage.png",
     blurb: "A bit about startpage",
-    tags: ["react"],
+    tags: ["react", "GraphQL"],
   },
   sentiment_analysis: {
     repo_url: "Bambanah/CAB420-SentimentAnalysis",
