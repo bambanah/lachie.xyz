@@ -4,13 +4,17 @@
 
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.heading_div {
+  width: 100%;
+  text-align: left;
 
   h1 {
     font-family: "Roboto Slab", serif;
     font-size: 5em;
-    margin: 0;
-    margin-bottom: 2rem;
-    margin-left: 3rem;
+    margin-left: calc(5% + 15px);
 
     background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     background-repeat: no-repeat;
@@ -21,16 +25,27 @@
 
 .list {
   font-family: "Roboto Slab", serif;
-  flex: 1 0 25%;
+  flex: 0 0;
+  flex-basis: content;
 
   display: flex;
   height: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: left;
-  // white-space: nowrap;
+  padding: 0 5%;
 
   z-index: 10;
+  margin: 0 auto 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .heading_div {
+    width: 1200px;
+  }
+  .list {
+    width: 1200px;
+  }
 }
 
 .card {
