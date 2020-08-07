@@ -2,7 +2,7 @@
 repo_url: "https://github.com/Bambanah/CAB420-SentimentAnalysis"
 title: "Sentiment Analysis"
 image_name: "sentiment_analysis.jpg"
-blurb: "A bit about sentiment"
+blurb: "Sentiment analysis of tweets regarding COVID-19."
 tags: ["tensorflow", "pandas"]
 ---
 

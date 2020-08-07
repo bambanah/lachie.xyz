@@ -2,7 +2,7 @@
 repo_url: "https://github.com/Bambanah/startpage"
 title: "Startpage"
 image_name: "startpage.png"
-blurb: "A bit about startpage"
+blurb: "Fully customisable startpage."
 tags: ["react", "GraphQL"]
 ---
 

@@ -18,7 +18,7 @@ export default function ProjectCard({ id, project }) {
           <div className={styles.card_column}>
             <h2>{project.title}</h2>
 
-            <p>{project.blurb}</p>
+            <p className={styles.project_blurb}>{project.blurb}</p>
 
             {project.tags && <TagList tags={project.tags}></TagList>}
           </div>
