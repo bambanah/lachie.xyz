@@ -1,9 +1,8 @@
-import { getTagStyles } from "../../lib/projects";
 import Tag from "./Tag";
 
-export default function TagList({ tags }) {
-  const tagStyles = getTagStyles();
+import tagStyles from "../../config/tagStyles";
 
+export default function TagList({ tags }) {
   const listItems = tags.map((tag) => {
     const fg =
       tag in tagStyles ? tagStyles[tag].fg : tagStyles["unspecified"].fg;

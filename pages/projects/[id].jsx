@@ -3,19 +3,11 @@ import styles from "../../components/styles/projects.module.scss";
 
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
-import useSWR from "swr";
 
-import matter from "gray-matter";
-
-import {
-  getProject,
-  getAllProjectIds,
-  getLocalMarkdown,
-} from "../../lib/projects";
+import { getAllProjectIds, getMarkdown } from "../../lib/projects";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { glob } from "glob";
 
 export default function Project({ frontmatter, markdownBody }) {
   return (
@@ -41,29 +33,21 @@ export default function Project({ frontmatter, markdownBody }) {
 
         <br />
 
-        <h1 className="title">{frontmatter.title}</h1>
+        <h1 className={styles.title}>{frontmatter.title}</h1>
         {markdownBody && <ReactMarkdown source={markdownBody} />}
-
-        <style jsx>{`
-          .title {
-            font-size: 5rem;
-            font-family: "Roboto Slab", serif;
-          }
-        `}</style>
       </article>
     </Layout>
   );
 }
 
 export async function getStaticProps({ params }) {
-  const content = await import(`../../MDX/projects/${params.id}.md`);
-  const data = matter(content.default);
+  const { frontmatter, content } = await getMarkdown(params.id);
 
   return {
     props: {
       projectId: params.id,
-      frontmatter: data.data,
-      markdownBody: data.content,
+      frontmatter: frontmatter,
+      markdownBody: content,
     },
   };
 }
@@ -72,7 +56,6 @@ export async function getStaticPaths() {
   const projectIds = getAllProjectIds();
 
   const paths = projectIds.map((id) => {
-    console.log(id);
     return {
       params: { id: id },
     };

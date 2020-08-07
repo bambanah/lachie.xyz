@@ -69,6 +69,22 @@
   margin-top: 10px;
 }
 
+.hero {
+  height: 20em;
+}
+
+.title {
+  font-size: 4rem;
+  color: rgb(2, 2, 0);
+  display: inline-block;
+  padding: 0 10px;
+
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  background-position: 0 100%;
+}
+
 .content {
   flex: 1 0 auto;
   width: 50rem;
@@ -79,19 +95,6 @@
 
   h1 {
     font-size: 3rem;
-
-    // Top header (title)
-    &:first-of-type {
-      font-size: 5rem;
-      color: rgb(2, 2, 0);
-      display: inline-block;
-      padding: 0 10px;
-
-      background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-      background-repeat: no-repeat;
-      background-size: 100% 90%;
-      background-position: 0 100%;
-    }
   }
 
   p {
@@ -144,8 +147,4 @@
     border-bottom: 3px solid rgba(255, 255, 255, 0.7);
     margin: 1em 1em;
   }
-}
-
-.hero {
-  height: 20em;
 }
