@@ -31,7 +31,7 @@ export default function MassivePreview() {
         <Link href={`/projects/${projectId}`}>
           <a
             onMouseEnter={() => setPreview(projects[projectId])}
-            // onMouseLeave={() => setPreview("")}
+            onMouseLeave={() => setPreview("")}
           >
             {projects[projectId].display}
           </a>

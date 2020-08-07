@@ -15,7 +15,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function Markdown({ projectId }) {
-  // const projectInfo = getProject(projectId);
   const projectInfo = {
     repo_url: "Bambanah/Depot",
     display: "Depot (This site)",
@@ -23,7 +22,6 @@ export default function Markdown({ projectId }) {
     blurb: "A bit about depot",
     tags: ["react", "nextjs"],
   };
-  const { data, error } = useSWR(projectInfo.repo_url, getMarkdownReadme);
 
   return (
     <Layout title={projectInfo.display}>
@@ -48,13 +46,13 @@ export default function Markdown({ projectId }) {
 
         <br />
 
-        {data && <ReactMarkdown source={data.readmeContent} />}
+        {/* {data && <ReactMarkdown source={data.readmeContent} />} */}
 
         <style jsx>{`
-          .title {
-            font-size: 5rem;
-            font-family: "Roboto Slab", serif;
-          }
+          // .title {
+          //   font-size: 5rem;
+          //   font-family: "Roboto Slab", serif;
+          // }
         `}</style>
       </article>
     </Layout>
