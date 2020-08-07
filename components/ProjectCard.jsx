@@ -9,7 +9,10 @@ export default function ProjectCard({ id, project }) {
       <Link href={`/projects/${id}`}>
         <div className={styles.card_content}>
           <div className={styles.card_column}>
-            <img src={"/img/" + project.image_name}></img>
+            <img
+              className={styles.project_image}
+              src={"/img/" + project.image_name}
+            ></img>
           </div>
 
           <div className={styles.card_column}>
