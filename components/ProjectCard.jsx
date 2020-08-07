@@ -11,10 +11,13 @@ export default function ProjectCard({ id, project }) {
           <div className={styles.card_column}>
             <img src={"/img/" + project.image_name}></img>
           </div>
+
           <div className={styles.card_column}>
-            <h2>{project.display}</h2>
+            <h2>{project.title}</h2>
+
             <p>{project.blurb}</p>
-            <TagList tags={project.tags}></TagList>
+
+            {project.tags && <TagList tags={project.tags}></TagList>}
           </div>
         </div>
       </Link>
