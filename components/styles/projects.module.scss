@@ -14,7 +14,7 @@
   h1 {
     font-family: "Roboto Slab", serif;
     font-size: 5em;
-    margin-left: calc(5% + 15px);
+    margin-left: 60px;
 
     background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     background-repeat: no-repeat;
@@ -33,7 +33,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: left;
-  padding: 0 5%;
+  padding: 0 50px;
 
   z-index: 10;
   margin: 0 auto 0 auto;
@@ -56,11 +56,36 @@
 
 .card_content {
   display: flex;
+  flex: 1 0 100%;
+  flex-direction: row;
   cursor: pointer;
 
   transition: all 0.15s ease;
   &:hover {
     transform: scale(1.02);
+  }
+}
+
+@media (max-width: 1000px) {
+  .card_content {
+    flex-direction: column;
+  }
+  .project_image {
+    min-height: 200px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heading_div h1 {
+    margin-left: 20px;
+    font-size: 3rem;
+  }
+  .list {
+    padding: 0px;
+  }
+  .card {
+    flex: 1 0 100%;
   }
 }
 
@@ -73,7 +98,7 @@
 .project_image {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   overflow: hidden;
 }
 .hero {
