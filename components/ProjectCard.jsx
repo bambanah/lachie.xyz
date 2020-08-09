@@ -9,12 +9,18 @@ export default function ProjectCard({ id, project }) {
       <Link href={`/projects/${id}`}>
         <div className={styles.card_content}>
           <div className={styles.card_column}>
-            <img src={"/img/" + project.image_name}></img>
+            <img
+              className={styles.project_image}
+              src={"/img/" + project.image_name}
+            ></img>
           </div>
+
           <div className={styles.card_column}>
-            <h2>{project.display}</h2>
-            <p>{project.blurb}</p>
-            <TagList tags={project.tags}></TagList>
+            <h2>{project.title}</h2>
+
+            <p className={styles.project_blurb}>{project.blurb}</p>
+
+            {project.tags && <TagList tags={project.tags}></TagList>}
           </div>
         </div>
       </Link>

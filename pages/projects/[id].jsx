@@ -3,67 +3,65 @@ import styles from "../../components/styles/projects.module.scss";
 
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
-import useSWR from "swr";
 
-import {
-  getMarkdownReadme,
-  getProject,
-  getAllProjectIds,
-} from "../../lib/projects";
+import { getAllProjectIds, getMarkdown } from "../../lib/projects";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-export default function Project({ projectId }) {
-  const projectInfo = getProject(projectId);
-  const { data, error } = useSWR(projectInfo.repo_url, getMarkdownReadme);
-
+export default function Project({ frontmatter, markdownBody }) {
   return (
-    <Layout title={projectInfo.display}>
+    <Layout title={frontmatter.title}>
       <div
         className={styles.hero}
         style={{
           background: `
           linear-gradient(rgba(2, 2, 0, 0.2),
           rgba(2, 2, 0, 0.2)),
-          url(${"/img/" + projectInfo.image_name}) no-repeat center
+          url(${"/img/" + frontmatter.image_name}) no-repeat center
           `,
           backgroundSize: `100vw`,
         }}
       ></div>
 
       <article className={styles.content}>
-        <Link href="/projects">
-          <a className={styles.back_link}>
-            <FontAwesomeIcon icon={faArrowLeft} /> back to projects
+        <div className={styles.link_row}>
+          <Link href="/projects">
+            <a>
+              <FontAwesomeIcon icon={faArrowLeft} /> back to projects
+            </a>
+          </Link>
+          <a href={frontmatter.repo_url}>
+            <FontAwesomeIcon icon={faGithub} /> GitHub
           </a>
-        </Link>
+        </div>
 
-        <br />
+        <h1 className={styles.title}>{frontmatter.title}</h1>
 
-        {data && <ReactMarkdown source={data.readmeContent} />}
-
-        <style jsx>{`
-          .title {
-            font-size: 5rem;
-            font-family: "Roboto Slab", serif;
-          }
-        `}</style>
+        <div className={styles.markdown}>
+          {markdownBody && <ReactMarkdown source={markdownBody} />}
+        </div>
       </article>
     </Layout>
   );
 }
 
 export async function getStaticProps({ params }) {
+  const { frontmatter, content } = await getMarkdown(params.id);
+
   return {
     props: {
       projectId: params.id,
+      frontmatter: frontmatter,
+      markdownBody: content,
     },
   };
 }
 
 export async function getStaticPaths() {
   const projectIds = getAllProjectIds();
+
   const paths = projectIds.map((id) => {
     return {
       params: { id: id },
