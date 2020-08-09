@@ -34,6 +34,10 @@ export default function Project({ frontmatter, markdownBody }) {
         <br />
 
         <h1 className={styles.title}>{frontmatter.title}</h1>
+        <br />
+        <a href={frontmatter.repo_url} className="subtitle">
+          View this project on GitHub
+        </a>
         {markdownBody && <ReactMarkdown source={markdownBody} />}
       </article>
     </Layout>
