@@ -8,6 +8,7 @@ import { getAllProjectIds, getMarkdown } from "../../lib/projects";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Project({ frontmatter, markdownBody }) {
   return (
@@ -25,20 +26,22 @@ export default function Project({ frontmatter, markdownBody }) {
       ></div>
 
       <article className={styles.content}>
-        <Link href="/projects">
-          <a className={styles.back_link}>
-            <FontAwesomeIcon icon={faArrowLeft} /> back to projects
+        <div className={styles.link_row}>
+          <Link href="/projects">
+            <a>
+              <FontAwesomeIcon icon={faArrowLeft} /> back to projects
+            </a>
+          </Link>
+          <a href={frontmatter.repo_url}>
+            <FontAwesomeIcon icon={faGithub} /> GitHub
           </a>
-        </Link>
-
-        <br />
+        </div>
 
         <h1 className={styles.title}>{frontmatter.title}</h1>
-        <br />
-        <a href={frontmatter.repo_url} className="subtitle">
-          View this project on GitHub
-        </a>
-        {markdownBody && <ReactMarkdown source={markdownBody} />}
+
+        <div className={styles.markdown}>
+          {markdownBody && <ReactMarkdown source={markdownBody} />}
+        </div>
       </article>
     </Layout>
   );
