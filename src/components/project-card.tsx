@@ -1,10 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import styles from "../styles/projects.module.scss";
+import styles from "@styles/projects.module.scss";
 import TagList from "@molecules/tag-list";
 
-export default function ProjectCard({ id, project }) {
+interface Props {
+	id: string;
+	project: any;
+}
+
+export default function ProjectCard({ id, project }: Props) {
 	return (
 		<div className={styles.card}>
 			<Link href={`/projects/${id}`}>
@@ -13,8 +18,9 @@ export default function ProjectCard({ id, project }) {
 						<Image
 							className={styles.project_image}
 							src={"/img/" + project.image_name}
-							layout="fill"
-						></Image>
+							width="400px"
+							height="250px"
+						/>
 					</div>
 
 					<div className={styles.card_column}>

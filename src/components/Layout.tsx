@@ -1,9 +1,9 @@
 import Head from "next/head";
 
-import Header from "./nav/Header";
-import Footer from "./nav/Footer";
+import Header from "./nav/header";
+import Footer from "./nav/footer";
 
-import styles from "../styles/layout.module.scss";
+import styles from "@styles/layout.module.scss";
 import React, { ReactNode } from "react";
 
 interface Props {

@@ -1,4 +1,5 @@
 const withImages = require("next-images");
+const path = require("path");
 
 module.exports = withImages({
 	pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
@@ -9,5 +10,14 @@ module.exports = withImages({
 			use: "raw-loader",
 		});
 		return config;
+	},
+	compiler: {
+		styledComponents: true,
+	},
+	sassOptions: {
+		includePaths: [path.join(__dirname, "src/styles")],
+	},
+	eslint: {
+		dirs: ["."],
 	},
 });

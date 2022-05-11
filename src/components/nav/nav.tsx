@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import styles from "../../styles/nav.module.scss";
+import styles from "@styles/nav.module.scss";
 
 export default function Nav() {
 	const router = useRouter();
@@ -17,11 +17,6 @@ export default function Nav() {
 				<li className={router.pathname.includes("/projects") ? "active" : ""}>
 					<Link href="/projects">
 						<a className={styles.nav_link}>projects</a>
-					</Link>
-				</li>
-				<li className={router.pathname.includes("/playground") ? "active" : ""}>
-					<Link href="/playground">
-						<a className={styles.nav_link}>playground</a>
 					</Link>
 				</li>
 			</ul>

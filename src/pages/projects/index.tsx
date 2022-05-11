@@ -1,9 +1,9 @@
 import { getAllProjects } from "../../lib/projects";
 
-import Layout from "../../components/Layout";
+import Layout from "@components/layout";
 
-import styles from "../../styles/projects.module.scss";
-import ProjectCard from "../../components/ProjectCard";
+import styles from "@styles/projects.module.scss";
+import ProjectCard from "@components/project-card";
 
 interface Props {
 	projects: {

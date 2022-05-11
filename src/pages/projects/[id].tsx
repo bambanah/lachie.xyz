@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout";
-import styles from "../../components/styles/projects.module.scss";
+import Layout from "@components/layout";
+import styles from "@styles/projects.module.scss";
 
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
@@ -9,8 +9,14 @@ import { getAllProjectIds, getMarkdown } from "../../lib/projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { GetStaticProps, GetStaticPropsContext } from "next";
 
-export default function Project({ frontmatter, markdownBody }) {
+interface Props {
+	frontmatter: { [id: string]: any };
+	markdownBody: string;
+}
+
+export default function Project({ frontmatter, markdownBody }: Props) {
 	return (
 		<Layout title={frontmatter.title}>
 			<div
@@ -23,7 +29,7 @@ export default function Project({ frontmatter, markdownBody }) {
           `,
 					backgroundSize: `100vw`,
 				}}
-			></div>
+			/>
 
 			<article className={styles.content}>
 				<div className={styles.link_row}>
@@ -40,24 +46,24 @@ export default function Project({ frontmatter, markdownBody }) {
 				<h1 className={styles.title}>{frontmatter.title}</h1>
 
 				<div className={styles.markdown}>
-					{markdownBody && <ReactMarkdown source={markdownBody} />}
+					{markdownBody && <ReactMarkdown>{markdownBody}</ReactMarkdown>}
 				</div>
 			</article>
 		</Layout>
 	);
 }
 
-export async function getStaticProps({ params }) {
-	const { frontmatter, content } = await getMarkdown(params.id);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+	const { frontmatter, content } = await getMarkdown(String(params?.id) ?? "");
 
 	return {
 		props: {
-			projectId: params.id,
+			projectId: String(params?.id) ?? "",
 			frontmatter: frontmatter,
 			markdownBody: content,
 		},
 	};
-}
+};
 
 export async function getStaticPaths() {
 	const projectIds = getAllProjectIds();

@@ -1,11 +1,13 @@
 import { glob } from "glob";
 import matter from "gray-matter";
+import * as fs from "fs";
+import { join } from "path";
 
 export function getAllProjectIds() {
-	const projectGlobs = glob.sync("MDX/projects/*.md");
+	const projectGlobs = glob.sync("src/MDX/projects/*.mdx");
 
 	const projectIds = projectGlobs.map((file) => {
-		return file.split("/")[2].slice(0, -3);
+		return file.split("/")[3].slice(0, -4);
 	});
 
 	return projectIds;
@@ -25,12 +27,18 @@ export function getAllProjects() {
 	return projects;
 }
 
-export async function getMarkdown(projectName: string) {
-	const content = await import(`../MDX/projects/${projectName}.md`);
-	const data = matter(content.default);
+const POSTS_PATH = join(process.cwd(), "src/MDX/projects");
 
-	return {
-		frontmatter: data.data,
-		content: data.content,
-	};
+export async function getMarkdown(slug: string) {
+	// add path/location to a single post
+	const fullPath = join(POSTS_PATH, `${slug}.mdx`);
+
+	// post's content
+	const fileContents = fs.readFileSync(fullPath, "utf-8");
+
+	// get the front matter data and content
+	const { data, content } = matter(fileContents);
+
+	// return the front matter data and content
+	return { frontmatter: data, content };
 }

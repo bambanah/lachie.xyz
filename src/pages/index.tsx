@@ -3,9 +3,9 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-import Layout from "../components/Layout";
+import Layout from "@components/layout";
 
-import styles from "../components/styles/home.module.scss";
+import styles from "@styles/home.module.scss";
 
 export default function Home() {
 	return (
