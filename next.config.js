@@ -1,18 +1,23 @@
 const withImages = require("next-images");
-const withMDX = require("@next/mdx")({
-  extension: /\.md?$/,
-});
+const path = require("path");
 
 module.exports = withImages({
-  pageExtensions: ["js", "jsx", "md", "mdx"],
+	pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 
-  webpack: function (config) {
-    config.node = { fs: "empty" };
-
-    config.module.rules.push({
-      test: /\.md$/,
-      use: "raw-loader",
-    });
-    return config;
-  },
+	webpack: function (config) {
+		config.module.rules.push({
+			test: /\.md$/,
+			use: "raw-loader",
+		});
+		return config;
+	},
+	compiler: {
+		styledComponents: true,
+	},
+	sassOptions: {
+		includePaths: [path.join(__dirname, "src/styles")],
+	},
+	eslint: {
+		dirs: ["."],
+	},
 });
