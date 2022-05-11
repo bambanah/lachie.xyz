@@ -17,9 +17,10 @@ export default function ProjectCard({ id, project }: Props) {
 					<div className={styles.card_column}>
 						<Image
 							className={styles.project_image}
-							src={"/img/" + project.image_name}
+							src={`/img/${project.image_name}`}
 							width="400px"
 							height="250px"
+							alt="Project Image"
 						/>
 					</div>
 

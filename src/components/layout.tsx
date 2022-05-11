@@ -16,7 +16,7 @@ const Layout: React.FC<Props> = ({ title, children }) => {
 		<div className={styles.container}>
 			<Head>
 				<title>
-					{(title !== undefined && title + " | Lachlan Underhill") ||
+					{(title !== undefined && `${title} | Lachlan Underhill`) ||
 						"Lachlan Underhill"}
 				</title>
 				<link rel="icon" href="/favicon.ico" />

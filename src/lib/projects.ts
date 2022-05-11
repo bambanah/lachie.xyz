@@ -1,7 +1,7 @@
 import { glob } from "glob";
 import matter from "gray-matter";
-import * as fs from "fs";
-import { join } from "path";
+import * as fs from "node:fs";
+import { join } from "node:path";
 
 export function getAllProjectIds() {
 	const projectGlobs = glob.sync("src/MDX/projects/*.mdx");

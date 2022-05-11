@@ -1,6 +1,6 @@
 import Tag from "@atoms/tag/tag";
 
-import tagStyles from "../config/tagStyles";
+import tagStyles from "../config/tag-styles";
 
 interface Props {
 	tags: string[];

@@ -9,7 +9,7 @@ import { getAllProjectIds, getMarkdown } from "../../lib/projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { GetStaticProps, GetStaticPropsContext } from "next";
+import { GetStaticProps } from "next";
 
 interface Props {
 	frontmatter: { [id: string]: any };
@@ -25,7 +25,7 @@ export default function Project({ frontmatter, markdownBody }: Props) {
 					background: `
           linear-gradient(rgba(2, 2, 0, 0.2),
           rgba(2, 2, 0, 0.2)),
-          url(${"/img/" + frontmatter.image_name}) no-repeat center
+          url(${`/img/${frontmatter.image_name}`}) no-repeat center
           `,
 					backgroundSize: `100vw`,
 				}}
