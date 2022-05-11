@@ -20,4 +20,8 @@ module.exports = withImages({
 	eslint: {
 		dirs: ["."],
 	},
+	i18n: {
+		locales: ["en"],
+		defaultLocale: "en",
+	},
 });

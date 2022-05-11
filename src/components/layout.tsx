@@ -20,6 +20,7 @@ const Layout: React.FC<Props> = ({ title, children }) => {
 						"Lachlan Underhill"}
 				</title>
 				<link rel="icon" href="/favicon.ico" />
+				<meta name="description" content="Come check out my projects!" />
 			</Head>
 
 			<Header />
