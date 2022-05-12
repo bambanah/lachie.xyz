@@ -6,6 +6,7 @@ const Styled = styled.h1`
 	color: white;
 	font-family: "Righteous", serif;
 	font-size: 12em;
+	font-weight: 400;
 	text-shadow: 0.03em 0.03em 0 #17171c;
 	z-index: 100;
 	user-select: none;
@@ -36,6 +37,7 @@ const Styled = styled.h1`
 		);
 		background-size: 0.05em 0.05em;
 		background-clip: text;
+		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 
 		animation: shad-anim 20s linear infinite;
