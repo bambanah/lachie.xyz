@@ -1,26 +1,12 @@
-.container {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+import React from "react";
+import styled from "styled-components";
 
-	a {
-		margin-top: 1rem;
-		font-family: "Fira Code", sans-serif;
-
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-}
-
-.hero_text {
+const Styled = styled.h1`
 	margin: 0;
 	color: white;
 	font-family: "Righteous", serif;
 	font-size: 12em;
-	text-shadow: 0.03em 0.03em 0 #020200;
+	text-shadow: 0.03em 0.03em 0 #17171c;
 	z-index: 100;
 	user-select: none;
 
@@ -32,11 +18,11 @@
 		content: attr(data-shadow);
 		position: absolute;
 		top: 0.06em;
-		left: 0.06em;
+		left: 0.05em;
 		z-index: -1;
 		text-shadow: none;
 
-		// This is extremely messy to look at, but does actually make sense
+		/* This is extremely messy to look at, but does actually make sense */
 		background-image: linear-gradient(
 			45deg,
 			#8fd3f4 3.2%,
@@ -63,4 +49,14 @@
 			}
 		}
 	}
+`;
+
+interface Props {
+	text: string;
 }
+
+const HeroText: React.FC<Props> = ({ text: label }) => {
+	return <Styled data-shadow={label}>{label}</Styled>;
+};
+
+export default HeroText;

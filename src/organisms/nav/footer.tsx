@@ -2,7 +2,7 @@ import styles from "@styles/nav.module.scss";
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
-	font-family: "Fira Code", monospace;
+	font-family: "Roboto Mono", monospace;
 	text-align: left;
 	width: 100%;
 	padding: 0 5%;

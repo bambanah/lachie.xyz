@@ -1,25 +1,10 @@
-import Link from "next/link";
+import Home from "@templates/home";
+import BaseLayout from "@templates/layout";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
-import Layout from "@components/layout";
-
-import styles from "@styles/home.module.scss";
-
-export default function Home() {
+export default function HomePage() {
 	return (
-		<Layout>
-			<div className={styles.container}>
-				<h1 className={styles.hero_text} data-shadow="hello!">
-					hello!
-				</h1>
-				<Link href="/projects">
-					<a>
-						Check out my projects <FontAwesomeIcon icon={faArrowRight} />
-					</a>
-				</Link>
-			</div>
-		</Layout>
+		<BaseLayout>
+			<Home />
+		</BaseLayout>
 	);
 }

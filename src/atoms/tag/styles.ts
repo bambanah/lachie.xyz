@@ -8,7 +8,7 @@ export const StyledTag = styled.li<TagProps>`
 	background-color: ${(props) => props.bg};
 	color: ${(props) => props.fg};
 
-	font-family: "Recursive";
+	font-family: "Roboto Mono";
 	font-size: 0.9em;
 	display: inline-block;
 	padding: 2px 4px;

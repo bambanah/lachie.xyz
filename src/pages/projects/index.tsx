@@ -1,9 +1,7 @@
-import { getAllProjects } from "../../lib/projects";
-
-import Layout from "@components/layout";
-
+import ProjectCard from "@organisms/project-card";
 import styles from "@styles/projects.module.scss";
-import ProjectCard from "@components/project-card";
+import BaseLayout from "@templates/layout";
+import { getAllProjects } from "../../lib/projects";
 
 interface Props {
 	projects: {
@@ -27,14 +25,14 @@ const Projects: React.FC<Props> = ({ projects }) => {
 	}
 
 	return (
-		<Layout title="Projects">
+		<BaseLayout title="Projects">
 			<div className={styles.container}>
 				<div className={styles.heading_div}>
 					<h1>Projects</h1>
 				</div>
 				<ProjectList />
 			</div>
-		</Layout>
+		</BaseLayout>
 	);
 };
 

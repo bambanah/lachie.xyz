@@ -27,8 +27,8 @@
             "@components/*": [
                 "src/components/*"
             ],
-            "@layouts/*": [
-                "src/layouts/*"
+            "@templates/*": [
+                "src/templates/*"
             ],
             "@molecules/*": [
                 "src/molecules/*"
