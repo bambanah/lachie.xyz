@@ -11,7 +11,8 @@
 		"lint": "next lint",
 		"lint:fix": "eslint . --fix",
 		"export": "next export",
-		"deploy": "yarn build && yarn export"
+		"deploy": "yarn build && yarn export",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.1.1",
