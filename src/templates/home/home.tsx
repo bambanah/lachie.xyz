@@ -3,11 +3,11 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
-import * as styles from "./home.styles";
+import * as Styles from "./home.styles";
 
 const Home = () => {
 	return (
-		<styles.Container>
+		<Styles.Container>
 			<HeroText text="hello!" />
 
 			<Link href="/projects">
@@ -15,7 +15,7 @@ const Home = () => {
 					Check out my projects <FontAwesomeIcon icon={faArrowRight} />
 				</a>
 			</Link>
-		</styles.Container>
+		</Styles.Container>
 	);
 };
 

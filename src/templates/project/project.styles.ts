@@ -25,12 +25,17 @@ export const Content = styled.article`
 export const LinkRow = styled.div`
 	display: flex;
 	justify-content: space-between;
+
 	a {
-		color: #fff;
+		color: ${({ theme }) => theme.colors.fg};
 		padding: 0 5px;
 		border-radius: 2px;
 
-		background-image: linear-gradient(120deg, #ffffff 0%, #ffffff 100%);
+		background-image: linear-gradient(
+			120deg,
+			${({ theme }) => theme.colors.fg} 0%,
+			${({ theme }) => theme.colors.fg} 100%
+		);
 		background-repeat: no-repeat;
 		background-size: 0% 0.1em;
 		background-position: 0 60%;
@@ -39,7 +44,6 @@ export const LinkRow = styled.div`
 
 		&:hover {
 			background-size: 100% 0.1em;
-			// color: #000;
 		}
 	}
 `;

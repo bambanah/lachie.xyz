@@ -1,4 +1,4 @@
-import Nav from "./nav";
+import Navbar from "./navbar/navbar";
 import Link from "next/link";
 
 import styles from "@styles/nav.module.scss";
@@ -11,7 +11,7 @@ function Header() {
 					<a>LACHLAN UNDERHILL</a>
 				</Link>
 			</div>
-			<Nav />
+			<Navbar />
 		</header>
 	);
 }

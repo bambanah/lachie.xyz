@@ -2,7 +2,7 @@ import Head from "next/head";
 import React, { ReactNode } from "react";
 import Footer from "../../organisms/nav/footer";
 import Header from "../../organisms/nav/header";
-import * as styles from "./layout.styles";
+import * as Styles from "./layout.styles";
 
 interface Props {
 	title?: string;
@@ -11,7 +11,7 @@ interface Props {
 
 const BaseLayout: React.FC<Props> = ({ title, children }) => {
 	return (
-		<styles.Container>
+		<Styles.Container>
 			<Head>
 				<title>{`${title ? `${title} | ` : ""}Lachlan Underhill`}</title>
 				<link rel="icon" href="/favicon.ico" />
@@ -20,10 +20,10 @@ const BaseLayout: React.FC<Props> = ({ title, children }) => {
 
 			<Header />
 
-			<styles.Section>{children}</styles.Section>
+			<Styles.Section>{children}</Styles.Section>
 
 			<Footer />
-		</styles.Container>
+		</Styles.Container>
 	);
 };
 

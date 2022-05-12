@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 const Styled = styled.h1`
 	margin: 0;
-	color: white;
+	color: ${({ theme }) => theme.colors.brand};
 	font-family: "Righteous", serif;
 	font-size: 12em;
 	font-weight: 400;
-	text-shadow: 0.03em 0.03em 0 #17171c;
+	text-shadow: 0.02em 0.02em 0 ${({ theme }) => theme.colors.bg};
 	z-index: 100;
 	user-select: none;
 
@@ -24,17 +24,17 @@ const Styled = styled.h1`
 		text-shadow: none;
 
 		/* This is extremely messy to look at, but does actually make sense */
-		background-image: linear-gradient(
+		/* background-image: linear-gradient(
 			45deg,
-			#8fd3f4 3.2%,
-			transparent 3.2%,
-			transparent 45%,
-			#8fd3f4 45%,
-			#8fd3f4 55%,
+			${({ theme }) => theme.colors.accent} 1%,
+			transparent 1%,
+			transparent 40%,
+			${({ theme }) => theme.colors.accent} 40%,
+			${({ theme }) => theme.colors.accent} 55%,
 			transparent 55%,
-			transparent 96.8%,
-			#8fd3f4 96.8%
-		);
+			transparent 93%,
+			${({ theme }) => theme.colors.accent} 93%
+		); */
 		background-size: 0.05em 0.05em;
 		background-clip: text;
 		-webkit-background-clip: text;

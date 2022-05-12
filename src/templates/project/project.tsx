@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import * as Styles from "./project.styles";
 
-import * as styles from "./project.styles";
 interface Props {
 	frontmatter: { [id: string]: any };
 	markdownBody: string;
@@ -14,10 +14,10 @@ interface Props {
 const Project = ({ frontmatter, markdownBody }: Props) => {
 	return (
 		<>
-			<styles.Hero imageName={frontmatter.image_name} />
+			<Styles.Hero imageName={frontmatter.image_name} />
 
-			<styles.Content>
-				<styles.LinkRow>
+			<Styles.Content>
+				<Styles.LinkRow>
 					<Link href="/projects">
 						<a>
 							<FontAwesomeIcon icon={faArrowLeft} /> back to projects
@@ -26,14 +26,14 @@ const Project = ({ frontmatter, markdownBody }: Props) => {
 					<a href={frontmatter.repo_url}>
 						<FontAwesomeIcon icon={faGithub} /> GitHub
 					</a>
-				</styles.LinkRow>
+				</Styles.LinkRow>
 
-				<styles.Title>{frontmatter.title}</styles.Title>
+				<Styles.Title>{frontmatter.title}</Styles.Title>
 
-				<styles.Markdown>
+				<Styles.Markdown>
 					{markdownBody && <ReactMarkdown>{markdownBody}</ReactMarkdown>}
-				</styles.Markdown>
-			</styles.Content>
+				</Styles.Markdown>
+			</Styles.Content>
 		</>
 	);
 };

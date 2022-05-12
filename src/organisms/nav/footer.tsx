@@ -23,7 +23,7 @@ const StyledFooter = styled.footer`
 	}
 
 	a {
-		color: rgb(199, 199, 199);
+		color: ${({ theme }) => theme.colors.fg};
 
 		&:hover {
 			color: white;
