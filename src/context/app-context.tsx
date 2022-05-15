@@ -26,7 +26,7 @@ interface Props {
 }
 
 export const AppContextProvider: React.FC<Props> = ({ children }) => {
-	let initialTheme = "dark";
+	let initialTheme = "light";
 
 	if (typeof window !== "undefined") {
 		initialTheme = localStorage.getItem("theme") ?? "light";
