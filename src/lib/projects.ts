@@ -34,7 +34,7 @@ export async function getMarkdown(slug: string) {
 	const fullPath = join(POSTS_PATH, `${slug}.mdx`);
 
 	// post's content
-	const fileContents = fs.readFileSync(fullPath, "utf-8");
+	const fileContents = fs.readFileSync(fullPath, "utf8");
 
 	// get the front matter data and content
 	const { data, content } = matter(fileContents);

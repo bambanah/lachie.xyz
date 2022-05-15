@@ -24,17 +24,17 @@ const Styled = styled.h1`
 		text-shadow: none;
 
 		/* This is extremely messy to look at, but does actually make sense */
-		/* background-image: linear-gradient(
+		background-image: linear-gradient(
 			45deg,
-			${({ theme }) => theme.colors.accent} 1%,
-			transparent 1%,
+			${({ theme }) => theme.colors.accent} 3%,
+			transparent 3%,
 			transparent 40%,
 			${({ theme }) => theme.colors.accent} 40%,
 			${({ theme }) => theme.colors.accent} 55%,
 			transparent 55%,
 			transparent 93%,
 			${({ theme }) => theme.colors.accent} 93%
-		); */
+		);
 		background-size: 0.05em 0.05em;
 		background-clip: text;
 		-webkit-background-clip: text;

@@ -26,16 +26,22 @@ interface Props {
 }
 
 export const AppContextProvider: React.FC<Props> = ({ children }) => {
-	let initialTheme = "light";
-
-	if (typeof window !== "undefined") {
-		initialTheme = localStorage.getItem("theme") ?? "light";
-	}
-
-	const [theme, setTheme] = useState(initialTheme);
+	const [theme, setTheme] = useState("light");
 
 	useEffect(() => {
-		if (theme !== localStorage.getItem("theme")) {
+		const storedTheme = localStorage.getItem("theme");
+
+		if (storedTheme !== null) {
+			setTheme(storedTheme);
+		} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			setTheme("dark");
+		}
+	}, []);
+
+	useEffect(() => {
+		const storedTheme = localStorage.getItem("theme");
+
+		if (theme !== storedTheme) {
 			localStorage.setItem("theme", theme);
 		}
 	}, [theme]);
