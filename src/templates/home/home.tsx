@@ -1,4 +1,4 @@
-import HeroText from "@atoms/hero-text";
+import HeroText from "@molecules/hero-text";
 import React from "react";
 import * as Styles from "./home.styles";
 
