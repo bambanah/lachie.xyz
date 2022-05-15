@@ -1,15 +1,26 @@
+import { useTheme } from "@context/app-context";
 import React from "react";
 import styled from "styled-components";
 
 const Styled = styled.h1`
+	padding: 0;
 	margin: 0;
+	margin-bottom: 4rem;
+
+	line-height: 100%;
+
+	cursor: pointer;
+	overflow: hidden;
+	user-select: none;
+
 	color: ${({ theme }) => theme.colors.brand};
 	font-family: "Righteous", serif;
 	font-size: 12em;
 	font-weight: 400;
+
 	text-shadow: 0.02em 0.02em 0 ${({ theme }) => theme.colors.bg};
+
 	z-index: 100;
-	user-select: none;
 
 	@media (max-width: 650px) {
 		font-size: 29.5vw;
@@ -54,7 +65,16 @@ interface Props {
 }
 
 const HeroText: React.FC<Props> = ({ text: label }) => {
-	return <Styled data-shadow={label}>{label}</Styled>;
+	const [theme, setTheme] = useTheme();
+
+	return (
+		<Styled
+			data-shadow={label}
+			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+		>
+			{label}
+		</Styled>
+	);
 };
 
 export default HeroText;

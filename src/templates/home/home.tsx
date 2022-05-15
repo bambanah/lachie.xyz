@@ -15,7 +15,7 @@ const Home = () => {
 			<Styles.About>
 				<p>I&#39;m Lachie.</p>
 				<p>
-					Currently, I&#39;m living my best life at{" "}
+					Currently, I&#39;m living my best life as a Software Engineer for{" "}
 					<a href="https://www.amazon.com/alm/storefront?almBrandId=QW1hem9uIEZyZXNo">
 						Amazon Fresh
 					</a>
@@ -32,13 +32,13 @@ const Home = () => {
 				<div className="links">
 					<p>You can check me out here:</p>
 					<a href="https://github.com/Bambanah">
-						<FontAwesomeIcon icon={faGithub} size="3x" />
+						<FontAwesomeIcon icon={faGithub} />
 					</a>
 					<a href="https://linkedin.com/in/lachlan-underhill-7476681a0/">
-						<FontAwesomeIcon icon={faLinkedin} size="3x" />
+						<FontAwesomeIcon icon={faLinkedin} />
 					</a>
 					<a href="https://www.hackerrank.com/Bambanah">
-						<FontAwesomeIcon icon={faHackerrank} size="3x" />
+						<FontAwesomeIcon icon={faHackerrank} />
 					</a>
 				</div>
 			</Styles.About>

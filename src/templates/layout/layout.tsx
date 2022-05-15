@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React, { ReactNode } from "react";
-import Header from "@organisms/nav/header";
 import * as Styles from "./layout.styles";
 
 interface Props {
@@ -16,8 +15,6 @@ const BaseLayout: React.FC<Props> = ({ title, children }) => {
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content="Lachlan Underhill" />
 			</Head>
-
-			<Header />
 
 			<Styles.Section>{children}</Styles.Section>
 		</Styles.Container>

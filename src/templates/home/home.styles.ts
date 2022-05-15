@@ -9,17 +9,18 @@ export const Container = styled.div`
 `;
 
 export const About = styled.div`
-	max-width: 35rem;
+	max-width: 38rem;
 	display: flex;
 	gap: 2rem;
 	flex-direction: column;
+	padding: 2rem;
 
 	p {
 		font-size: 1.4em;
 		color: ${({ theme }) => theme.colors.fg};
 		opacity: 0.9;
 
-		text-align: justify;
+		text-align: left;
 	}
 
 	a {
@@ -38,15 +39,18 @@ export const About = styled.div`
 		align-self: center;
 		display: flex;
 		align-items: center;
-		gap: 1rem;
+		gap: 1.8rem;
 
 		a {
 			color: ${({ theme }) => theme.colors.fg}bb;
 
 			&:hover {
 				color: ${({ theme }) => theme.colors.fg};
-				filter: drop-shadow(0px 0px 2px #00000033);
 			}
+		}
+
+		svg {
+			font-size: 2.8rem;
 		}
 	}
 `;
