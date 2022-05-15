@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
 	* {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		transition: color 0.2s, background-color 0.2s, text-shadow 0.2s;
+		transition: color 1s, background-color 1s, text-shadow 1s;
 	}
 
 	*,

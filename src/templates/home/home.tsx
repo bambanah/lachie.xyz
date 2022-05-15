@@ -11,7 +11,7 @@ import * as Styles from "./home.styles";
 const Home = () => {
 	return (
 		<Styles.Container>
-			<HeroText text="hello!" />
+			<HeroText />
 			<Styles.About>
 				<p>I&#39;m Lachie.</p>
 				<p>

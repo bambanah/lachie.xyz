@@ -14,7 +14,7 @@ interface AppContextState {
 
 const AppContext = createContext<AppContextState>({
 	theme: [
-		"light",
+		"dark",
 		() => {
 			// do nothing
 		},
@@ -26,7 +26,7 @@ interface Props {
 }
 
 export const AppContextProvider: React.FC<Props> = ({ children }) => {
-	const [theme, setTheme] = useState("light");
+	const [theme, setTheme] = useState("dark");
 
 	useEffect(() => {
 		const storedTheme = localStorage.getItem("theme");
