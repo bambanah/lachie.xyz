@@ -30,7 +30,7 @@ const Home = () => {
 				</p>
 
 				<div className="links">
-					<p>You can check me out here:</p>
+					<p>You can check me out here!</p>
 					<a href="https://github.com/Bambanah">
 						<FontAwesomeIcon icon={faGithub} />
 					</a>

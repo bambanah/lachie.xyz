@@ -17,7 +17,7 @@ export const About = styled.div`
 	flex-direction: column;
 
 	p {
-		font-size: 1.4em;
+		font-size: 1.2em;
 		color: ${({ theme }) => theme.colors.fg};
 		opacity: 0.9;
 
@@ -39,8 +39,16 @@ export const About = styled.div`
 		margin-top: 2rem;
 		align-self: center;
 		display: flex;
+		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap;
 		gap: 1.8rem;
+
+		p {
+			text-align: center;
+			flex: 1 0 auto;
+			width: 100%;
+		}
 
 		a {
 			color: ${({ theme }) => theme.colors.fg}bb;
