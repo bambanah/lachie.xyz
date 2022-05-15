@@ -1,3 +1,4 @@
+import { THEME_SWITCH_DURATION } from "@utils/globals";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -15,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 	* {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		transition: color 1s, background-color 1s, text-shadow 1s;
+		transition: color ${THEME_SWITCH_DURATION}s, background-color ${THEME_SWITCH_DURATION}s, text-shadow ${THEME_SWITCH_DURATION}s;
 	}
 
 	*,

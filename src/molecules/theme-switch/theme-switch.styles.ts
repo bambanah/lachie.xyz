@@ -1,17 +1,17 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled.div<{ size: number }>`
-	overflow: hidden;
 	width: ${({ size }) => size}em;
 	height: ${({ size }) => size}em;
 	border-radius: 50%;
 	background-color: ${({ theme }) => theme.colors.bg};
-	/* transition: none; */
 
 	div {
 		width: ${({ size }) => size}em;
 		height: ${({ size }) => size}em;
 		border-radius: 50%;
+		position: absolute;
 
 		cursor: pointer;
 

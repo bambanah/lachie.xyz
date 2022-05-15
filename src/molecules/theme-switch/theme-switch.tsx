@@ -1,7 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import * as Styles from "./theme-switch.styles";
 import { useTheme } from "@context/app-context";
+import { THEME_SWITCH_DURATION } from "@utils/globals";
 
 const size = 6.7;
 
@@ -10,26 +11,37 @@ const ThemeSwitch = () => {
 
 	return (
 		<Styles.Container size={size}>
-			<motion.div
-				className="sun"
-				onTap={() => setTheme("dark")}
-				initial={{ y: theme === "light" ? 0 : `${size}em` }}
-				animate={{
-					y: theme === "light" ? 0 : `${size}em`,
-					zIndex: theme === "light" ? 100 : 0,
-				}}
-				transition={{ duration: 1 }}
-			/>
-			<motion.div
-				className="moon"
-				onTap={() => setTheme("light")}
-				initial={{ y: theme === "dark" ? `-${size}em` : 0 }}
-				animate={{
-					y: theme === "dark" ? `-${size}em` : 0,
-					zIndex: theme === "dark" ? 100 : 0,
-				}}
-				transition={{ duration: 1 }}
-			/>
+			<AnimatePresence>
+				{theme === "light" && (
+					<motion.div
+						className="sun"
+						key="sun"
+						onTap={() => setTheme("dark")}
+						initial={{ y: "100vh", zIndex: 100 }}
+						animate={{
+							y: 0,
+						}}
+						exit={{
+							y: "100vh",
+							zIndex: 1,
+						}}
+						transition={{ duration: THEME_SWITCH_DURATION }}
+					/>
+				)}
+				{theme === "dark" && (
+					<motion.div
+						className="moon"
+						key="moon"
+						onTap={() => setTheme("light")}
+						initial={{ y: "100vh", zIndex: 100 }}
+						animate={{
+							y: 0,
+						}}
+						exit={{ y: 1200, zIndex: 1 }}
+						transition={{ duration: THEME_SWITCH_DURATION }}
+					/>
+				)}
+			</AnimatePresence>
 		</Styles.Container>
 	);
 };

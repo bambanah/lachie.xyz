@@ -6,7 +6,7 @@ export const Container = styled.div`
 	display: flex;
 
 	flex-direction: column;
-	overflow-x: hidden;
+	overflow: hidden;
 `;
 
 export const Section = styled.section`
