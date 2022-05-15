@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+interface ScaleProps {
+	scale: number;
+}
+
+export const Wrapper = styled.div<ScaleProps>`
 	font-size: 16px;
 	display: flex;
 	flex-direction: row;
 	-moz-box-align: center;
 	align-items: center;
 	position: relative;
-	height: 2em;
-	width: 4em;
+	height: calc(2em * ${({ scale }) => scale});
+	width: calc(4em * ${({ scale }) => scale});
 	border-radius: 1em;
 	transition: all 200ms linear 0s;
 	cursor: pointer;
@@ -33,31 +37,31 @@ export const Wrapper = styled.div`
 	}
 `;
 
-export const Circle = styled.div`
+export const Circle = styled.div<ScaleProps>`
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 	border-radius: 100%;
-	width: 1.4em;
+	width: calc(1.4em * ${({ scale }) => scale});
 	overflow: hidden;
-	height: 1.4em;
+	height: calc(1.4em * ${({ scale }) => scale});
 	transition: all 200ms ease;
 
 	&.light {
-		transform: translateX(0.3em);
+		transform: translateX(calc(0.3em * ${({ scale }) => scale}));
 		background-color: rgb(253, 223, 117);
 		border: 3px solid rgba(214, 176, 94, 0.71);
 
 		svg {
-			transform: translateY(30px);
+			transform: translateY(30px * ${({ scale }) => scale});
 			opacity: 0;
 		}
 	}
 
 	&.dark {
-		transform: translateX(2.3em);
+		transform: translateX(calc(2.3em * ${({ scale }) => scale}));
 		background-color: rgba(255, 255, 255, 0.4);
 		border: 2px solid rgba(255, 255, 255, 0.9);
 	}
@@ -65,8 +69,8 @@ export const Circle = styled.div`
 	svg {
 		position: absolute;
 		transition: all 150ms ease 0s;
-		width: 0.8em;
-		height: 0.8em;
+		width: calc(0.8em * ${({ scale }) => scale});
+		height: calc(0.8em * ${({ scale }) => scale});
 		fill: white;
 		opacity: 1;
 	}
@@ -83,6 +87,7 @@ interface StarProps {
 	y: number;
 	size: number;
 	speed: number;
+	scale: number;
 }
 
 export const Star = styled.div<StarProps>`
@@ -94,8 +99,8 @@ export const Star = styled.div<StarProps>`
 
 	width: ${(props) => props.size}px;
 	height: ${(props) => props.size}px;
-	left: ${(props) => props.x + 8}px;
-	top: ${(props) => 10 - props.y}px;
+	left: ${(props) => (props.x + 8) * props.scale}px;
+	top: ${(props) => (10 - props.y) * props.scale}px;
 
 	&.light {
 		opacity: 0;
