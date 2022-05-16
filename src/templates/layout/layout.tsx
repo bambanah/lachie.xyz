@@ -14,7 +14,10 @@ const BaseLayout: React.FC<Props> = ({ title, children }) => {
 				<title>{`${title ? `${title} | ` : ""}Lachlan Underhill`}</title>
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content="Come check me out!" />
-				<meta name="viewport" content="minimum-scale=1" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1, shrink-to-fit=no"
+				/>
 			</Head>
 
 			<Styles.Section>{children}</Styles.Section>
