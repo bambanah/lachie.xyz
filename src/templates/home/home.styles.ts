@@ -11,10 +11,11 @@ export const Container = styled.div`
 `;
 
 export const About = styled.div`
-	max-width: 38rem;
+	max-width: 35rem;
 	display: flex;
 	gap: 2rem;
 	flex-direction: column;
+	font-family: "Roboto Mono", sans-serif;
 
 	p {
 		font-size: 1.2em;
@@ -22,15 +23,8 @@ export const About = styled.div`
 		opacity: 0.9;
 
 		text-align: left;
-	}
 
-	a {
-		font-family: "Roboto Mono", sans-serif;
-		text-decoration: underline;
-
-		&:hover {
-			color: ${({ theme }) => theme.colors.brand};
-			text-shadow: 0px 0px 1px ${({ theme }) => theme.colors.brand};
+		a {
 			text-decoration: underline;
 		}
 	}

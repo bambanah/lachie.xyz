@@ -26,7 +26,7 @@ const SunMoon = ({
 				y: 0,
 			}}
 			exit={{
-				y: isSmall ? `-${size / 2}em` : `${size / 2}em`,
+				y: isSmall ? `-${size / 2}em` : `${size}em`,
 			}}
 			transition={{ duration: THEME_SWITCH_DURATION }}
 		/>
