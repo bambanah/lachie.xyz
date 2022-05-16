@@ -2,6 +2,18 @@ import { useTheme } from "@context/app-context";
 import React from "react";
 import styled from "styled-components";
 
+const Container = styled.div`
+	position: relative;
+
+	> div {
+		position: absolute;
+		top: 3.8em;
+		right: 3.5em;
+
+		z-index: 100;
+	}
+`;
+
 const Styled = styled.h1`
 	padding: 0;
 	margin: 0;
@@ -21,6 +33,11 @@ const Styled = styled.h1`
 	text-shadow: 0.02em 0.02em 0 ${({ theme }) => theme.colors.bg};
 
 	z-index: 100;
+
+	.hidden {
+		opacity: 0;
+		text-shadow: none;
+	}
 
 	@media (max-width: 650px) {
 		font-size: 29.5vw;
@@ -60,20 +77,18 @@ const Styled = styled.h1`
 	}
 `;
 
-interface Props {
-	text: string;
-}
-
-const HeroText: React.FC<Props> = ({ text: label }) => {
+const HeroText: React.FC = () => {
 	const [theme, setTheme] = useTheme();
 
 	return (
-		<Styled
-			data-shadow={label}
-			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-		>
-			{label}
-		</Styled>
+		<Container>
+			<Styled
+				data-shadow="hello!"
+				onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+			>
+				hello!
+			</Styled>
+		</Container>
 	);
 };
 
