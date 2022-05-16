@@ -1,17 +1,22 @@
 import styled from "styled-components";
 
 export const Container = styled.div<{ size: number }>`
-	position: fixed;
+	position: absolute;
 	bottom: -${({ size }) => size / 1.5}em;
 
-	width: ${({ size }) => size}em;
-	height: ${({ size }) => size}em;
+	inset: 0;
+	width: 100vw;
+	height: 100vh;
+
+	overflow: hidden;
 
 	div {
 		width: ${({ size }) => size}em;
 		height: ${({ size }) => size}em;
 		border-radius: 50%;
-		position: fixed;
+
+		position: absolute;
+		bottom: -${({ size }) => size / 1.5}em;
 
 		cursor: pointer;
 
@@ -37,16 +42,10 @@ export const Container = styled.div<{ size: number }>`
 	@media screen and (max-width: 700px) {
 		--new-size: ${({ size }) => size / 4}em;
 
-		width: var(--new-size);
-		height: var(--new-size);
-
-		bottom: -var(--new-size);
-
 		div {
 			width: var(--new-size);
 			height: var(--new-size);
 
-			margin: auto;
 			top: calc(var(--new-size) / -2);
 
 			&.sun {
