@@ -5,6 +5,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import HeroText from "@molecules/hero-text";
+import ThemeSwitch from "@molecules/theme-switch";
 import React from "react";
 import * as Styles from "./home.styles";
 
@@ -42,6 +43,8 @@ const Home = () => {
 					</a>
 				</div>
 			</Styles.About>
+
+			<ThemeSwitch />
 		</Styles.Container>
 	);
 };

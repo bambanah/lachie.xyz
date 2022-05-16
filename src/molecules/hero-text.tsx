@@ -1,7 +1,6 @@
 import { useTheme } from "@context/app-context";
 import React from "react";
 import styled from "styled-components";
-import ThemeSwitch from "./theme-switch";
 
 const Container = styled.div`
 	position: relative;
@@ -36,7 +35,8 @@ const Styled = styled.h1`
 	z-index: 100;
 
 	.hidden {
-		visibility: hidden;
+		opacity: 0;
+		text-shadow: none;
 	}
 
 	@media (max-width: 650px) {
@@ -86,12 +86,8 @@ const HeroText: React.FC = () => {
 				data-shadow="hello!"
 				onClick={() => setTheme(theme === "light" ? "dark" : "light")}
 			>
-				hell<span className="hidden">o</span>!
+				hello!
 			</Styled>
-
-			<div>
-				<ThemeSwitch />
-			</div>
 		</Container>
 	);
 };
