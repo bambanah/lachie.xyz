@@ -7,8 +7,34 @@ import { useMediaQuery } from "src/hooks/use-media-query";
 
 const size = 20;
 
+const SunMoon = ({
+	variant,
+	isSmall,
+}: {
+	variant: "sun" | "moon";
+	isSmall: boolean;
+}) => {
+	const [, setTheme] = useTheme();
+
+	return (
+		<motion.div
+			className={variant}
+			key={variant}
+			onTap={() => setTheme(variant === "sun" ? "dark" : "light")}
+			initial={{ y: isSmall ? `-${size / 2}em` : `${size / 2}em` }}
+			animate={{
+				y: 0,
+			}}
+			exit={{
+				y: isSmall ? `-${size / 2}em` : `${size / 2}em`,
+			}}
+			transition={{ duration: THEME_SWITCH_DURATION }}
+		/>
+	);
+};
+
 const ThemeSwitch = () => {
-	const [theme, setTheme] = useTheme();
+	const [theme] = useTheme();
 
 	const isSmall = useMediaQuery("(max-width: 700px)");
 
@@ -16,32 +42,10 @@ const ThemeSwitch = () => {
 		<Styles.Container size={size}>
 			<AnimatePresence>
 				{theme === "light" && (
-					<motion.div
-						className="sun"
-						key="sun"
-						onTap={() => setTheme("dark")}
-						initial={{ y: isSmall ? `-${size}em` : `${size}em` }}
-						animate={{
-							y: 0,
-						}}
-						exit={{
-							y: isSmall ? `-${size / 2}em` : `${size / 2}em`,
-						}}
-						transition={{ duration: THEME_SWITCH_DURATION }}
-					/>
+					<SunMoon key="sun" variant="sun" isSmall={isSmall} />
 				)}
 				{theme === "dark" && (
-					<motion.div
-						className="moon"
-						key="moon"
-						onTap={() => setTheme("light")}
-						initial={{ y: isSmall ? `-${size}em` : `${size}em` }}
-						animate={{
-							y: 0,
-						}}
-						exit={{ y: isSmall ? `-${size / 2}em` : `${size / 2}em` }}
-						transition={{ duration: THEME_SWITCH_DURATION }}
-					/>
+					<SunMoon key="moon" variant="moon" isSmall={isSmall} />
 				)}
 			</AnimatePresence>
 		</Styles.Container>

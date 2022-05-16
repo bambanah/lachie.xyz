@@ -16,16 +16,21 @@ export const Container = styled.div<{ size: number }>`
 		cursor: pointer;
 
 		&.sun {
+			left: 5em;
+
 			background-color: #f7914d;
 			border: 1em solid #f7b14d;
-			left: 5em;
+
 			box-shadow: 0px 0px 30px #f7914d;
 		}
 
 		&.moon {
-			background-color: #fff;
 			right: 5em;
-			box-shadow: 0px 0px 15px #fff;
+
+			background-color: #f1f1f1;
+			border: 0.4em solid #fff;
+
+			box-shadow: 0px 0px 20px #fff;
 		}
 	}
 
