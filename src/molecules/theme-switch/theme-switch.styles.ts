@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div<{ size: number }>`
 	position: absolute;
 	bottom: -${({ size }) => size / 1.5}em;
-
 	inset: 0;
 	width: 100vw;
 	height: 100vh;
+	pointer-events: none;
 
 	overflow: hidden;
 
@@ -19,6 +19,7 @@ export const Container = styled.div<{ size: number }>`
 		bottom: -${({ size }) => size / 1.5}em;
 
 		cursor: pointer;
+		pointer-events: auto;
 
 		&.sun {
 			left: 5em;
