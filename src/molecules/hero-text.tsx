@@ -65,13 +65,39 @@ const Styled = styled.h1`
 
 		animation: shad-anim 0.3s linear infinite;
 
+		@media (max-width: 650px) {
+			background: repeating-linear-gradient(
+				45deg,
+				${({ theme }) => theme.colors.accent},
+				${({ theme }) => theme.colors.accent} 2px,
+				rgba(255, 255, 255, 0) 2px,
+				rgba(255, 255, 255, 0) 6px
+			);
+
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+
+			animation-name: shad-anim-small;
+		}
+
 		@keyframes shad-anim {
 			0% {
 				background-position-y: 0;
 			}
 
 			100% {
-				background-position-y: 11.315px;
+				background-position-y: 11.31371px;
+			}
+		}
+
+		@keyframes shad-anim-small {
+			0% {
+				background-position-y: 0;
+			}
+
+			100% {
+				background-position-y: 8.4px;
 			}
 		}
 	}
