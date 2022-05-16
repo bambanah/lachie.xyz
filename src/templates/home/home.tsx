@@ -32,13 +32,16 @@ const Home = () => {
 
 				<div className="links">
 					<p>You can check me out here!</p>
-					<a href="https://github.com/Bambanah">
+					<a href="https://github.com/Bambanah" aria-label="GitHub">
 						<FontAwesomeIcon icon={faGithub} />
 					</a>
-					<a href="https://linkedin.com/in/lachlan-underhill-7476681a0/">
+					<a
+						href="https://linkedin.com/in/lachlan-underhill-7476681a0/"
+						aria-label="LinkedIn"
+					>
 						<FontAwesomeIcon icon={faLinkedin} />
 					</a>
-					<a href="https://www.hackerrank.com/Bambanah">
+					<a href="https://www.hackerrank.com/Bambanah" aria-label="HackerRank">
 						<FontAwesomeIcon icon={faHackerrank} />
 					</a>
 				</div>
