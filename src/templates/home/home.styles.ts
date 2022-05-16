@@ -44,16 +44,12 @@ export const About = styled.div`
 			width: 100%;
 		}
 
-		a {
-			color: ${({ theme }) => theme.colors.fg}bb;
-
-			&:hover {
-				color: ${({ theme }) => theme.colors.fg};
-			}
-		}
-
 		svg {
 			font-size: 2.8rem;
+
+			path {
+				color: ${({ theme }) => theme.colors.fg}dd;
+			}
 		}
 	}
 `;
