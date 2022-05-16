@@ -1,4 +1,4 @@
-import "@styles/fonts.scss";
+import "@styles/globals.scss";
 import GlobalStyle from "@styles/global-style";
 import { AppProps } from "next/app";
 import { AppContextProvider } from "src/context/app-context";
