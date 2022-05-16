@@ -16,7 +16,7 @@ const BaseLayout: React.FC<Props> = ({ title, children }) => {
 				<meta name="description" content="Come check me out!" />
 				<meta
 					name="viewport"
-					content="width=device-width, initial-scale=1, shrink-to-fit=no"
+					content="height=device-height, width=device-width, initial-scale=1, shrink-to-fit=no"
 				/>
 			</Head>
 
