@@ -65,6 +65,7 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
 						top: 0,
 						left: 0,
 						backgroundColor: "black",
+						pointerEvents: "none",
 					}}
 					exit={{ opacity: 0 }}
 					transition={{ duration: THEME_SWITCH_DURATION }}
