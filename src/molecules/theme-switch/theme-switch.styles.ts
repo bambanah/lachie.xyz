@@ -5,7 +5,7 @@ export const Container = styled.div<{ size: number }>`
 	bottom: -${({ size }) => size / 1.5}em;
 	inset: 0;
 	width: 100vw;
-	height: 100vh;
+	height: 100%;
 	pointer-events: none;
 
 	overflow: hidden;
