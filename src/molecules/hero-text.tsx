@@ -26,7 +26,7 @@ const Styled = styled.h1`
 	user-select: none;
 
 	color: ${({ theme }) => theme.colors.brand};
-	font-family: "Righteous", serif;
+	font-family: "Righteous", sans-serif;
 	font-size: 12em;
 	font-weight: 400;
 
