@@ -8,6 +8,7 @@ export const Container = styled.div`
 
 	flex-direction: column;
 	justify-content: center;
+	overflow-x: hidden;
 `;
 
 export const Section = styled.section`
@@ -16,5 +17,5 @@ export const Section = styled.section`
 	align-items: center;
 	justify-content: center;
 	padding: 2em;
-	padding-bottom: 7em;
+	padding-bottom: 5em;
 `;

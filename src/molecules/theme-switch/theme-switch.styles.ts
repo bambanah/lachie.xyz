@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div<{ size: number }>`
 	position: absolute;
-	bottom: -${({ size }) => size / 1.5}em;
+	bottom: -${({ size }) => size / 1.3}em;
 	inset: 0;
 	width: 100vw;
 	height: 100%;
@@ -16,7 +16,7 @@ export const Container = styled.div<{ size: number }>`
 		border-radius: 50%;
 
 		position: absolute;
-		bottom: -${({ size }) => size / 1.5}em;
+		bottom: -${({ size }) => size / 1.3}em;
 
 		cursor: pointer;
 		pointer-events: auto;
