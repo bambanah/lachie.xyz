@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lachie.xyz/sitemap-index.xml
