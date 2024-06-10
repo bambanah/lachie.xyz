@@ -24,4 +24,5 @@ module.exports = withImages({
 		locales: ["en"],
 		defaultLocale: "en",
 	},
+	output: "standalone",
 });
