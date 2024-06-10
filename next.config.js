@@ -1,5 +1,5 @@
 const withImages = require("next-images");
-const path = require("path");
+const path = require("node:path");
 
 module.exports = withImages({
 	pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
