@@ -1,6 +1,5 @@
 {
-	"name": "depot",
-	"version": "0.1.2",
+	"name": "lachie.xyz",
 	"private": true,
 	"license": "MIT",
 	"scripts": {
@@ -11,8 +10,8 @@
 		"lint": "next lint",
 		"lint:fix": "eslint . --fix",
 		"export": "next export",
-		"deploy": "yarn build && yarn export",
-		"prepare": "husky install"
+		"deploy": "pnpm build && pnpm export",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -43,6 +42,7 @@
 		"@testing-library/jest-dom": "^6.0.0",
 		"@testing-library/react": "^14.0.0",
 		"@types/glob": "^8.0.0",
+		"@types/jest": "^29.5.12",
 		"@types/node": "^20.0.0",
 		"@types/react": "^18.0.9",
 		"@types/react-dom": "^18.0.4",
