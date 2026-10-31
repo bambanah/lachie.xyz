@@ -15,16 +15,16 @@ const Home = () => {
 			<Styles.About>
 				<p>I&#39;m Lachie.</p>
 				<p>
-					Currently, I&#39;m living my best life as a Software Engineer for{" "}
-					<a href="https://www.amazon.com/alm/storefront?almBrandId=QW1hem9uIEZyZXNo">
-						Amazon Fresh
-					</a>
-					.
+					Currently, I&#39;m living my best life as the Engineering Lead at{" "}
+					<a href="https://propelhealth.ai/">Propel Health AI</a>.
 				</p>
 
 				<p>
 					I&#39;ve previously worked for{" "}
-					<a href="https://technologyonecorp.com/">TechnologyOne</a> and{" "}
+					<a href="https://www.amazon.com/alm/storefront?almBrandId=QW1hem9uIEZyZXNo">
+						Amazon Fresh
+					</a>
+					, <a href="https://technologyonecorp.com/">TechnologyOne</a> and{" "}
 					<a href="https://workingmouse.com.au/">WorkingMouse</a>, and loved
 					every second of it.
 				</p>

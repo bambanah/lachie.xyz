@@ -12,7 +12,7 @@ export default function Root({ Component, pageProps }: AppProps) {
 				<link rel="icon" href="/favicon.ico" />
 				<meta
 					name="description"
-					content="Currently employed as a Software Development Engineer at Amazon. Come check me out!"
+					content="Currently the Engineering Lead at Propel Health AI. Come check me out!"
 				/>
 				<meta
 					name="viewport"
